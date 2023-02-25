@@ -4,7 +4,7 @@ class ChallengesController < ApplicationController
 
   end
 
-  def show
+  def create
 
   end
 end
