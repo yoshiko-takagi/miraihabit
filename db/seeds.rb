@@ -26,9 +26,21 @@ test = [
   }
 ]
 
+Challenge.destroy_all
+
+
 # Dont change the creation loop
 test.each do |item|
   q = Question.create(content: item[:question])
   Answer.create(question: q, content: item[:answer1])
-  Answer.create(question: q, content: item[:answer2])
+  a = Answer.create(question: q, content: item[:answer2])
+  challenge = Challenge.new(
+  name: "Test Challenge",
+  description: "Test description",
+  category: "food",
+  answer: a,
+  difficulty: 3,
+  duration: 3,
+  score: 15 )
+challenge.save!
 end
