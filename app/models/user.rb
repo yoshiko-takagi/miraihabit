@@ -7,5 +7,6 @@ class User < ApplicationRecord
   validates :first_name, :last_name, presence: true
   validates :score, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  # has_many :user_answers, :user_challenges
+  has_many :user_answers
+  has_many :user_challenges
 end
