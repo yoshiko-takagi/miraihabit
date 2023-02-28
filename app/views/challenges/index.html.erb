@@ -1,1 +1,9 @@
-<h1>challenges/index</h1>
+<% @challenges.each do |challenge| %>
+  <div class="card-product">
+    <%= image_tag challenge.category%>
+    <div class="card-product-infos">
+      <h2><%= challenge.name %></h2>
+      <p>Product description with <strong>relevant info</strong> only.</p>
+    </div>
+  </div>
+<% end %>
