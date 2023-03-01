@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
 
+
   # def dashboard
   #   if user_answer_filtered
   #   @currect_score = user_score + completed_challenge_score
