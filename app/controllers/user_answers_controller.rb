@@ -1,5 +1,6 @@
 class UserAnswersController < ApplicationController
   def index
+    @user_answer = policy_scope(UserAnswer)
   end
 
   def create
@@ -14,8 +15,10 @@ class UserAnswersController < ApplicationController
         @next_question = Question.where("id > ?", @user_answer.answer.question.id).first
         redirect_to question_path(@next_question)
       else
-        console.log("fine")
-        # submit > go to results
+        # submit >
+        # TODO: calculate user score
+        # and go to results
+        redirect_to user_answers_path
       end
     else
       render 'questions/show', status: :unprocessable_entity
