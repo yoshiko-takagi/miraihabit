@@ -6,12 +6,9 @@
       <div class="answers-wrapper">
           <% @question.answers.each do |answer|  %>
             <div class="answer">
-              <%= link_to "", class: "btn btn-ghost" do %>
-                <%= answer.content %>
-              <% end %>
+              <%= render "form", answer: answer %>
             </div>
           <% end %>
-          <%= render "form" %>
       </div>
       </div>
       <%= render "footer" %>
