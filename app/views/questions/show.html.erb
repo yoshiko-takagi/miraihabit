@@ -1,0 +1,8 @@
+<div class="container">
+<h2>Pick your choice!</h2>
+<%= @question.content  %>
+
+<% @question.answers.each do |answer|  %>
+<%= answer.content %>
+<% end %>
+</div>

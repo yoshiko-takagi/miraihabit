@@ -1,10 +1,10 @@
 class ChallengesController < ApplicationController
 
   def index
-
+    @challenges = policy_scope(Challenge)
   end
 
-  def show
+  def create
 
   end
 end
