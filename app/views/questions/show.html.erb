@@ -5,9 +5,7 @@
       <%= @question.content  %>
       <div class="answers-wrapper">
           <% @question.answers.each do |answer|  %>
-            <div class="answer">
-              <%= render "form", answer: answer %>
-            </div>
+            <%= render "form", answer: answer %>
           <% end %>
       </div>
       </div>
