@@ -1,8 +1,17 @@
 <div class="container">
 <h2>Pick your choice!</h2>
-<%= @question.content  %>
 
+<div class="test-card">
+<div class="test-card-content">
+<%= @question.content  %>
+<div class="answers-wrapper">
 <% @question.answers.each do |answer|  %>
+<div class="answer">
 <%= answer.content %>
+</div>
 <% end %>
+</div>
+</div>
+</div>
+
 </div>

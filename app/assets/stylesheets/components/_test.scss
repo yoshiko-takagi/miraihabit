@@ -1,16 +1,28 @@
-.test-header{
+.test-card{
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.test-card .test-card-header{
 
 }
 
 
-.test-question{
+.test-card .test-card-content{
 
 }
 
-.test-answer{
+.test-card-content .test-card-question{
 
 }
 
-.test-footer{
+.test-card-content .answers-wrapper{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
+.test-card-content .answer {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  flex: 0 0 30%;
+  padding: 16px;
 }
