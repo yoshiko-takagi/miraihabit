@@ -1,16 +1,30 @@
-.test-header{
-
+.test-card{
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 24px;
 }
 
-
-.test-question{
-
+.test-card .test-card-content{
+  padding: 16px;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
-.test-answer{
-
+.test-card-content .answers-wrapper{
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.test-footer{
+.test-card-content-answer {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  flex: 0 0 40%;
+  padding: 16px;
+}
 
+.test-card .footer{
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }

@@ -1,8 +1,14 @@
-<div class="container">
-<h2>Pick your choice!</h2>
-<%= @question.content  %>
-
-<% @question.answers.each do |answer|  %>
-<%= answer.content %>
-<% end %>
+<div class="container-fluid">
+  <div class="test-card">
+    <div class="test-card-content">
+      <h2>Pick your current habit!</h2>
+      <%= @question.content  %>
+      <div class="answers-wrapper">
+          <% @question.answers.each do |answer|  %>
+            <%= render "form", answer: answer %>
+          <% end %>
+      </div>
+      </div>
+      <%# <%= render "footer" %>
+  </div>
 </div>
