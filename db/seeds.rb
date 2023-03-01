@@ -3,6 +3,9 @@
 
 # This is the assesment test content.
 # You can change the questions and relative answers here
+
+Question.destroy_all
+
 test = [
   {
     question: "At work/school I...",
