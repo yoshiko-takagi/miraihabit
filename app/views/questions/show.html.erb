@@ -3,7 +3,6 @@
     <div class="test-card-content">
       <h2>Pick your choice!</h2>
       <%= @question.content  %>
-
       <div class="answers-wrapper">
           <% @question.answers.each do |answer|  %>
             <div class="answer">
@@ -13,6 +12,15 @@
             </div>
           <% end %>
       </div>
+      </div>
+      <div class="footer">
+        <%= link_to "#", class: "btn btn-ghost" do %>
+          <i class="fa-solid fa-circle-arrow-left"></i> Back
+        <% end %>
+        <%= link_to "#", class: "btn btn-ghost" do %>
+          Next <i class="fa-solid fa-circle-arrow-right"></i>
+        <% end %>
+
       </div>
   </div>
 </div>

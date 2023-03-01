@@ -21,3 +21,10 @@
   flex: 0 0 40%;
   padding: 16px;
 }
+
+.test-card .footer{
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
