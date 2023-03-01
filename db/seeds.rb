@@ -45,7 +45,7 @@ test.each do |item|
 challenge.save!
 end
 
-user = User.create!(email: 'doug@test.com', password: 'password', first_name: 'why is', last_name: 'this validated')
+user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Aplle')
 Question.find_each do |question|
   answer = question.answers.sample
   UserAnswer.create(user: user, answer: answer)

@@ -10,10 +10,22 @@ class User < ApplicationRecord
   has_many :user_answers
   has_many :answers, through: :user_answers
   has_many :answer_challenges, through: :answers, source: :challenge
+  has_many :completed_challenges, through: :answers, source: :challenge
+  # normal has many
   has_many :user_challenges
+  # filtered has many
+  has_many :completed_user_challenges, -> { where completed: true }, class_name: "UserChallenge"
+  # normal has many
   has_many :challenges, through: :user_challenges
+  # filtered has many
+  has_many :completed_challenges, through: :completed_user_challenges, source: :challenge
+
 
   def total_score
-    challenges.where(completed: true).sum(:score) + answer_challenges.where(completed: true).sum(:score)
+    completed_challenges.sum(:score) + answer_challenges.sum(:score)
+  end
+
+  def my_challenges
+    challenges.name
   end
 end
