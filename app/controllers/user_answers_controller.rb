@@ -16,8 +16,6 @@ class UserAnswersController < ApplicationController
         redirect_to question_path(@next_question)
       else
         # submit >
-        # TODO: calculate user score
-
         # and go to results
         redirect_to user_answers_path
       end
