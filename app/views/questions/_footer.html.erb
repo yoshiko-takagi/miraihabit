@@ -1,0 +1,19 @@
+<div class="footer">
+      <%# Back appears only if Not the first question %>
+      <% if @question != Question.first %>
+        <%= link_to question_path(@previous_question), class: "btn btn-ghost" do %>
+          <i class="fa-solid fa-circle-arrow-left"></i> Back
+        <% end %>
+      <% end %>
+      <%# TODO : Next btn need to appear after choice %>
+      <%# Next appears only if Not the last question %>
+      <% if @question != Question.last %>
+        <%= link_to question_path(@next_question), class: "btn btn-ghost" do %>
+          Next <i class="fa-solid fa-circle-arrow-right"></i>
+        <% end %>
+      <% else %>
+        <%= link_to "#", class: "btn btn-ghost" do %>
+          Sumbit all <i class="fa-solid fa-circle-arrow-right"></i>
+        <% end %>
+      <% end %>
+</div>

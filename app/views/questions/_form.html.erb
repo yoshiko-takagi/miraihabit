@@ -1,0 +1,4 @@
+<%= form_for @user_answer do |f| %>
+<%= f.submit @question.answers.first.content, class: 'btn btn-success' %>
+<%= f.submit @question.answers.last.content, class: 'btn btn-success' %>
+<% end %>

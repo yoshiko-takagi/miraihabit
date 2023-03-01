@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="test-card">
     <div class="test-card-content">
-      <h2>Pick your choice!</h2>
+      <h2>Pick your current habit!</h2>
       <%= @question.content  %>
       <div class="answers-wrapper">
           <% @question.answers.each do |answer|  %>
@@ -11,23 +11,9 @@
               <% end %>
             </div>
           <% end %>
+          <%= render "form" %>
       </div>
       </div>
-      <div class="footer">
-      <% if @question != Question.first %>
-        <%= link_to "#", class: "btn btn-ghost" do %>
-          <i class="fa-solid fa-circle-arrow-left"></i> Back
-        <% end %>
-      <% end %>
-      <% if @question != Question.last %>
-        <%= link_to "#", class: "btn btn-ghost" do %>
-          Next <i class="fa-solid fa-circle-arrow-right"></i>
-        <% end %>
-      <% else %>
-        <%= link_to "#", class: "btn btn-ghost" do %>
-          Sumbit all <i class="fa-solid fa-circle-arrow-right"></i>
-        <% end %>
-      <% end %>
-      </div>
+      <%= render "footer" %>
   </div>
 </div>
