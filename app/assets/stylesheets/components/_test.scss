@@ -1,23 +1,27 @@
 .test-card{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 24px;
 }
 
 .test-card .test-card-header{
-
+  padding: 16px;
+  text-align: center;
 }
 
 
 .test-card .test-card-content{
-
+  padding: 16px;
 }
 
 .test-card-content .test-card-question{
+  margin-bottom: 16px;
+  text-align: center;
 
 }
 
 .test-card-content .answers-wrapper{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 

@@ -1,17 +1,21 @@
-<div class="container">
-<h2>Pick your choice!</h2>
-
-<div class="test-card">
-<div class="test-card-content">
-<%= @question.content  %>
-<div class="answers-wrapper">
-<% @question.answers.each do |answer|  %>
-<div class="answer">
-<%= answer.content %>
-</div>
-<% end %>
-</div>
-</div>
-</div>
-
+<div class="container-fluid">
+  <div class="test-card">
+    <div class="test-card-header">
+      <h2>Pick your choice!</h2>
+    </div>
+    <div class="test-card-content">
+      <div class="test-card-question">
+        <%= @question.content  %>
+      </div>
+      <div class="answers-wrapper">
+          <% @question.answers.each do |answer|  %>
+            <div class="answer">
+              <%= link_to "", class: "btn btn-ghost" do %>
+                <%= answer.content %>
+              <% end %>
+            </div>
+          <% end %>
+      </div>
+      </div>
+  </div>
 </div>
