@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Dashboard</h1>
+
+  <p><%= @user.first_name %>'s score: <%= @user.total_score %></p>
+  <p>Goal score: 1000</p>
+
+    <% @user.challenges.each do |challenge| %>
+      <div class="card-product mb-3">
+        <%= image_tag challenge.category%>
+        <div class="card-product-infos">
+          <h2><%= challenge.name %></h2>
+          <p>Description says so many times description bra bra bra bra until you know it is enough</p>
+        </div>
+  </div>
+    <% end %>
+</div>

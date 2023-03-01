@@ -44,3 +44,13 @@ test.each do |item|
   score: 15 )
 challenge.save!
 end
+
+user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Aplle')
+Question.find_each do |question|
+  answer = question.answers.sample
+  UserAnswer.create(user: user, answer: answer)
+end
+
+Challenge.all.sample(2).each do |challenge|
+  UserChallenge.create(user: user, challenge: challenge, completed: true)
+end
