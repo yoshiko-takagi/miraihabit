@@ -1,12 +1,11 @@
 <div class="container">
   <h1 class="my-3">My Challenge Tracker</h1>
-
+  <h2><span class="badge bg-secondary"><%= Date.current.strftime("%b %d, %Y") %></span></h2>
 
   <div >
     <%# <i class="fa-solid fa-square-check fs-4"></i> %>
     <div class="card-product-infos">
       <% @user_challenges.each do |user_challenge| %>
-      <h3 class="my-3"><%= user_challenge.challenge.name %></h3>
       <%= render "user_challenges/form", user_challenge: user_challenge %>
     <% end %>
     </div>
@@ -16,14 +15,14 @@
     <%= month_calendar do |date| %>
       <%= date.strftime("%m/%d")%>
       <% @schedule[date.to_s]&.each do |user_challenge| %>
-        <div class="user-challenge">  <!-- We will add some style to the meeting class later so let's add it now -->
-          <p class="btn btn-success text-light "><%= user_challenge.challenge.name %></p>
+        <div class="user-challenge">
+          <% if user_challenge.schedule == true %>  <!-- We will add some style to the meeting class later so let's add it now -->
+            <p class="badge bg-light text-dark"><%= user_challenge.challenge.name %></p>
+          <% else %>
+            <p class="badge bg-success text-light"><%= user_challenge.challenge.name %></p>
+          <% end %>
         </div>
       <% end %>
     <% end %>
   </div>
-
-
-
-
 </div>

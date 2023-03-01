@@ -1,4 +1,4 @@
 <%= simple_form_for(user_challenge) do |f| %>
-  <%= f.collection_check_boxes :schedule, user_challenge.schedule_form_data, :first, :last, checked: user_challenge.schedule_form_data %>
-  <%= f.submit "Submit", class: 'btn btn-info mt-2' %>
+  <%= f.collection_check_boxes :schedule, user_challenge.schedule_form_data, :first, :last, checked: user_challenge.schedule_form_data%>
+  <%= f.submit "Submit", class: 'btn btn-info' %>
 <% end %>
