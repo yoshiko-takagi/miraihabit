@@ -5,6 +5,8 @@
 # You can change the questions and relative answers here
 
 #questions seeds
+UserAnswer.destroy_all
+UserChallenge.destroy_all
 Question.destroy_all
 
 test = [
