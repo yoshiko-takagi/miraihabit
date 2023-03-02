@@ -13,13 +13,13 @@ Challenge.destroy_all
 test = [
   {
     question: "At work/school I...",
-    answer1: "Bring my own water bottle",
-    answer2: "Buy a plastic water bottle",
+    answer1: "Bring my own lunch",
+    answer2: "Get takeout",
     challenge: {
-      name: "Lunchbox!",
-      description: "Bring your own LunchBox to Work/School!According to a study done by MALUCA Lab, 44% of ocean plastics are linked to takeout food.",
+      name: "Bring Your Own Lunch",
+      description: "Bring your own LunchBox to Work/School. According to a study done by MALUCA Lab, 44% of ocean plastics are linked to takeout food.",
       category: "food",
-      difficulty: 5,
+      difficulty: 3,
       duration: 3,
       score: 50
     }
@@ -29,7 +29,7 @@ test = [
     answer1: "Bring reusable bags",
     answer2: "Buy grocery bags",
     challenge: {
-      name: "Reusable bag!",
+      name: "Bring Reusable Bags",
       description: "Don't waste money and plastic, a reusable bag is great for grocery shopping.",
       category: "food",
       difficulty: 1,
@@ -42,10 +42,10 @@ test = [
     answer1: "Bar shampoo",
     answer2: "Shampoo in a bottle",
     challenge: {
-      name: "Bar shampoo",
+      name: "Switch to Bar Shampoo",
       description: "Bar shampoo are not only ecologic but healtier, lighter and take less space!",
-      category: "igiene",
-      difficulty: 5,
+      category: "hygiene",
+      difficulty: 1,
       duration: 3,
       score: 20
     }
@@ -55,10 +55,75 @@ test = [
   answer1: "A washable cloth",
   answer2: "Single use wet whipes",
   challenge: {
-    name: "Cloth to clean",
+    name: "Change the Way You Clean Your Home",
     description: "Don't waste money and plastic for single wet whipes, a simple cloth can be easily washed with baking soda.",
-    category: "igiene",
-    difficulty: 5,
+    category: "cleaning",
+    difficulty: 2,
+    duration: 3,
+    score: 20
+  }
+},
+{
+  question: "I drink coffee...",
+  answer1: "From a mug/ reusable coffee cup",
+  answer2: "From a takeout cup",
+  challenge: {
+    name: "Stop Using Disposable Coffee Cups",
+    description: "Although coffee cups are made of paper, the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which is a petroleum-based plastic.",
+    category: "food",
+    difficulty: 3,
+    duration: 3,
+    score: 20
+  }
+},
+{
+  question: "I buy my groceries...",
+  answer1: "From a plastic-free bulk buying grocery store",
+  answer2: "From a regular grocery store",
+  challenge: {
+    name: "Buy Groceries in Bulk with Reusable Jars and Bags",
+    description: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plstic-free grocery stores will make a huge difference!",
+    category: "food",
+    difficulty: 3,
+    duration: 3,
+    score: 20
+  }
+},
+{
+  question: "I brush my teeth with...",
+  answer1: "Toothpaste powder/tablets",
+  answer2: "Toothpaste in a bottle",
+  challenge: {
+    name: "Switch to Powder/Tablet Toothpaste",
+    description: "The average person uses about 6 tubes of toothpaste a year. If we all switched from tube toothpaste to powder or tablet toothpaste in paper packaging, it would make a huge difference!",
+    category: "hygiene",
+    difficulty: 1,
+    duration: 3,
+    score: 20
+  }
+},
+{
+  question: "When cleaning I use...",
+  answer1: "Eco friendly sponges",
+  answer2: "Regular sponges (synthetic)",
+  challenge: {
+    name: "Ditch Synthetic Sponges",
+    description: "Most sponges are made of either polyester, polyurethane or nylon, which are not recyclable and release microplastics into the water as they fall apart while scrubbing your dishes. You can switch to more eco-friendly sponges that are made of sea sponges, cellulose or coconut fiber.",
+    category: "cleaning",
+    difficulty: 2,
+    duration: 3,
+    score: 20
+  }
+},
+{
+  question: "I wash my clothes with...",
+  answer1: "Detergent sheets",
+  answer2: "Bottled detergent",
+  challenge: {
+    name: "Use Detergent Sheets/Pods in Paper Packaging",
+    description: "Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great.",
+    category: "cleaning",
+    difficulty: 2,
     duration: 3,
     score: 20
   }
@@ -85,10 +150,10 @@ end
 
 # All the other challenges seeds
 challenge = Challenge.new(
-  name: "Bamboo toothbrush",
+  name: "Switch to a Bamboo Toothbrush",
   description: "Brush your teeth with a Bamboo toothbrush!Other than ecologic it's gentle on your gums.",
-  category: "igiene",
-  difficulty: 3,
+  category: "hygiene",
+  difficulty: 1,
   duration: 7,
   score: 80 )
 challenge.save!
