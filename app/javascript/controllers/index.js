@@ -9,3 +9,9 @@ application.register("hello", HelloController)
 
 import ProgressBarController from "./progress_bar_controller"
 application.register("progress-bar", ProgressBarController)
+
+// import { Application } from '@hotwired/stimulus'
+import Autosave from 'stimulus-rails-autosave'
+
+// const application = Application.start()
+application.register('autosave', Autosave)

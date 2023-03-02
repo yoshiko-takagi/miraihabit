@@ -2,6 +2,8 @@ class UserChallenge < ApplicationRecord
   belongs_to :user
   belongs_to :challenge
   after_create :generate_schedule
+  before_update :set_completed
+
   # validates :json ??
   def generate_schedule
     new_schedule = {}
@@ -13,8 +15,15 @@ class UserChallenge < ApplicationRecord
   end
 
   def schedule_form_data
-    schedule.select { |date, completed| date == Date.today.to_s }.map do |date, completed|
-      [completed, challenge.name]
+    schedule.select { |date, _completed| date == Date.today.to_s }
+  end
+
+  def set_completed
+    all_complete = schedule.all? { |_date, completed| completed }
+    if all_complete
+      self.completed = true
+    else
+      self.completed = false
     end
   end
 end
