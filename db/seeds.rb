@@ -148,16 +148,6 @@ test.each do |item|
   challenge.save!
 end
 
-# All the other challenges seeds
-challenge = Challenge.new(
-  name: "Switch to a Bamboo Toothbrush",
-  description: "Brush your teeth with a Bamboo toothbrush!Other than ecologic it's gentle on your gums.",
-  category: "hygiene",
-  difficulty: 1,
-  duration: 7,
-  score: 80 )
-challenge.save!
-
 
 user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Aplle')
 Question.find_each do |question|
