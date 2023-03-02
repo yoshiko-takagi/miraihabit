@@ -17,11 +17,5 @@
 </div>
 </div>
 <% @challenges.each do |challenge| %>
-  <div class="card-product">
-    <%= image_tag challenge.category%>
-    <div class="card-product-infos">
-      <h2><%= challenge.name %></h2>
-      <p><%= challenge.description %></p>
-    </div>
-  </div>
+  <%= render 'challenges/card', challenge: challenge %>
 <% end %>
