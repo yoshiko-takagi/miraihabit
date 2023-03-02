@@ -4,7 +4,9 @@
     <div class="score-circle">
       <p><%= @user.total_score %></p>
     </div>
-    <p>Goal score: 1000</p>
+    <div>
+      <p>Goal score: 1000</p>
+    </div>
   </div>
   <% @user.challenges.each do |challenge| %>
     <%= render 'challenges/card', challenge: challenge %>
