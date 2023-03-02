@@ -1,8 +1,13 @@
 <div class="container">
   <h1>Dashboard</h1>
-  <p><%= @user.first_name %>'s score: <%= @user.total_score %></p>
-  <p>Goal score: 1000</p>
+  <div class="card-dashboard">
+    <div class="score-circle">
+      <p><%= @user.total_score %></p>
+    </div>
+    <p>Goal score: 1000</p>
+  </div>
   <% @user.challenges.each do |challenge| %>
     <%= render 'challenges/card', challenge: challenge %>
   <% end %>
+  <script src="js/progress-bar.js"></script>
 </div>
