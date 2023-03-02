@@ -1,4 +1,8 @@
-<%= simple_form_for(user_challenge) do |f| %>
-  <%= f.collection_check_boxes :schedule, user_challenge.schedule_form_data, :first, :last, checked: user_challenge.schedule_form_data%>
-  <%= f.submit "Submit", class: 'btn btn-info' %>
+<%= simple_form_for user_challenge, html: { data: { controller: 'autosave'}} do |f| %>
+  <% user_challenge.schedule_form_data.each do |date, completed| %>
+    <%= check_box_tag 'user_challenge[schedule][]', date, completed, id: "user-challenge-#{user_challenge.id}", data: { action: 'autosave#save' } %>
+    <label for="user-challenge-<%= user_challenge.id %>">
+      <%= user_challenge.challenge.name %>
+    </label>
+  <% end %>
 <% end %>
