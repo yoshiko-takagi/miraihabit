@@ -15,7 +15,7 @@
 .challenge-card-small img {
   height: 130px;
   width: 130px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .challenge-card-small h2 {
@@ -34,6 +34,17 @@
 
 .challenge-card-small .challenge-card-small-infos {
   padding: 16px;
+}
+
+.challenge-card-small .challenge-card-small-infos h3 {
+  font-size: 20px;
+}
+
+
+
+.difficulty-card {
+  width: 100px;
+  background: white;
 }
 
 .card-dashboard {
