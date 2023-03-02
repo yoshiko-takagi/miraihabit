@@ -4,6 +4,9 @@
 # This is the assesment test content.
 # You can change the questions and relative answers here
 
+#questions seeds
+UserAnswer.destroy_all
+UserChallenge.destroy_all
 Question.destroy_all
 
 test = [
@@ -29,8 +32,8 @@ test = [
   }
 ]
 
+#challenges seeds
 Challenge.destroy_all
-
 
 # Dont change the creation loop
 test.each do |item|
@@ -38,13 +41,13 @@ test.each do |item|
   Answer.create(question: q, content: item[:answer1])
   a = Answer.create(question: q, content: item[:answer2])
   challenge = Challenge.new(
-  name: "Test Challenge",
-  description: "Test description",
+  name: "Bring your own Bento to Work/School",
+  description: "According to a study done by MALUCA Lab, 44% of ocean plastics are linked to takeout food",
   category: "food",
   answer: a,
-  difficulty: 3,
+  difficulty: 5,
   duration: 3,
-  score: 15 )
+  score: 20 )
 challenge.save!
 end
 

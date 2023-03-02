@@ -1,3 +1,21 @@
+<div class="banner" style="background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_path"139606_s.jpg"%>);">
+</div>
+<div class="container" style="padding-top: 20px">
+  <div class="container" style="text-align: center">
+    <h1>Browse our Challenges</h1>
+    <div class="banner-footer">
+      <%= form_with url: challenges_path, method: :get, class: "d-flex banner-footer banner-footer-searchbar" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a Challenge"
+      %>
+        <%= submit_tag "Search", class: "btn btn-info " %>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
 <% @challenges.each do |challenge| %>
   <%= render 'challenges/card', challenge: challenge %>
 <% end %>
