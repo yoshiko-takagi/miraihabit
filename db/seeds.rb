@@ -12,19 +12,6 @@ Challenge.destroy_all
 
 test = [
   {
-    question: "At work/school I...",
-    answer1: "Bring my own lunch",
-    answer2: "Get takeout",
-    challenge: {
-      name: "Bring Your Own Lunch",
-      description: "Bring your own LunchBox to Work/School. According to a study done by MALUCA Lab, 44% of ocean plastics are linked to takeout food.",
-      category: "food",
-      difficulty: 3,
-      duration: 3,
-      score: 50
-    }
-  },
-  {
     question: "When I go grocery shopping I...",
     answer1: "Bring reusable bags",
     answer2: "Buy grocery bags",
@@ -50,6 +37,19 @@ test = [
       score: 20
     }
   },
+  {
+  question: "I brush my teeth with...",
+  answer1: "Toothpaste powder/tablets",
+  answer2: "Toothpaste in a bottle",
+  challenge: {
+    name: "Switch to Powder/Tablet Toothpaste",
+    description: "The average person uses about 6 tubes of toothpaste a year. If we all switched from tube toothpaste to powder or tablet toothpaste in paper packaging, it would make a huge difference!",
+    category: "hygiene",
+    difficulty: 1,
+    duration: 3,
+    score: 20
+  }
+},
 {
   question: "When cleaning I use...",
   answer1: "A washable cloth",
@@ -59,45 +59,6 @@ test = [
     description: "Don't waste money and plastic for single wet whipes, a simple cloth can be easily washed with baking soda.",
     category: "cleaning",
     difficulty: 2,
-    duration: 3,
-    score: 20
-  }
-},
-{
-  question: "I drink coffee...",
-  answer1: "From a mug/ reusable coffee cup",
-  answer2: "From a takeout cup",
-  challenge: {
-    name: "Stop Using Disposable Coffee Cups",
-    description: "Although coffee cups are made of paper, the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which is a petroleum-based plastic.",
-    category: "food",
-    difficulty: 3,
-    duration: 3,
-    score: 20
-  }
-},
-{
-  question: "I buy my groceries...",
-  answer1: "From a plastic-free bulk buying grocery store",
-  answer2: "From a regular grocery store",
-  challenge: {
-    name: "Support Plastic-Free Grocery Stores",
-    description: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plstic-free grocery stores will make a huge difference!",
-    category: "food",
-    difficulty: 3,
-    duration: 3,
-    score: 20
-  }
-},
-{
-  question: "I brush my teeth with...",
-  answer1: "Toothpaste powder/tablets",
-  answer2: "Toothpaste in a bottle",
-  challenge: {
-    name: "Switch to Powder/Tablet Toothpaste",
-    description: "The average person uses about 6 tubes of toothpaste a year. If we all switched from tube toothpaste to powder or tablet toothpaste in paper packaging, it would make a huge difference!",
-    category: "hygiene",
-    difficulty: 1,
     duration: 3,
     score: 20
   }
@@ -126,6 +87,45 @@ test = [
     difficulty: 2,
     duration: 3,
     score: 20
+  }
+}
+{
+  question: "I drink coffee...",
+  answer1: "From a mug/ reusable coffee cup",
+  answer2: "From a takeout cup",
+  challenge: {
+    name: "Stop Using Disposable Coffee Cups",
+    description: "Although coffee cups are made of paper, the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which is a petroleum-based plastic.",
+    category: "food",
+    difficulty: 3,
+    duration: 3,
+    score: 20
+  }
+},
+{
+  question: "I buy my groceries...",
+  answer1: "From a plastic-free bulk buying grocery store",
+  answer2: "From a regular grocery store",
+  challenge: {
+    name: "Support Plastic-Free Grocery Stores",
+    description: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plstic-free grocery stores will make a huge difference!",
+    category: "food",
+    difficulty: 3,
+    duration: 3,
+    score: 20
+  }
+},
+{
+  question: "At work/school I...",
+  answer1: "Bring my own lunch",
+  answer2: "Get takeout",
+  challenge: {
+    name: "Bring Your Own Lunch",
+    description: "Bring your own LunchBox to Work/School. According to a study done by MALUCA Lab, 44% of ocean plastics are linked to takeout food.",
+    category: "food",
+    difficulty: 3,
+    duration: 3,
+    score: 50
   }
 }
 ]
