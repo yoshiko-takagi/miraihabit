@@ -1,6 +1,7 @@
 class UserAnswersController < ApplicationController
   def index
     @user_answer = policy_scope(UserAnswer)
+    @challenges = Challenge.all
   end
 
   def create
