@@ -81,7 +81,7 @@ test = [
   answer1: "From a plastic-free bulk buying grocery store",
   answer2: "From a regular grocery store",
   challenge: {
-    name: "Buy Groceries in Bulk with Reusable Jars and Bags",
+    name: "Support Plastic-Free Grocery Stores",
     description: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plstic-free grocery stores will make a huge difference!",
     category: "food",
     difficulty: 3,
@@ -120,7 +120,7 @@ test = [
   answer1: "Detergent sheets",
   answer2: "Bottled detergent",
   challenge: {
-    name: "Use Detergent Sheets/Pods in Paper Packaging",
+    name: "Use Detergent Sheets/Pods",
     description: "Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great.",
     category: "cleaning",
     difficulty: 2,
