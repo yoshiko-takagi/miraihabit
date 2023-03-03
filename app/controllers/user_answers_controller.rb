@@ -1,6 +1,7 @@
 class UserAnswersController < ApplicationController
   def index
     @user_answer = policy_scope(UserAnswer)
+    @user_challenge = UserChallenge.new
     # get only the challenges that are not already completed(from the test)
     @suggested_challenges = Challenge.select { |c| current_user.challenges.exclude?(c) }
   end
