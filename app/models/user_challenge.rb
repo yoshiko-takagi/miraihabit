@@ -29,5 +29,8 @@ class UserChallenge < ApplicationRecord
     end
   end
 
-  # (created_at + 1)...((created_at + 1 ) +
+  def mark_as_done(date)
+    self.schedule[date] = true
+    save
+  end
 end
