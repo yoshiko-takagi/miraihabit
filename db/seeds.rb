@@ -23,7 +23,7 @@ test = [
       category: "food",
       difficulty: 1,
       duration: 5,
-      score: 20
+      score: 10
     }
   },
 #2
@@ -50,7 +50,7 @@ test = [
     category: "food",
     difficulty: 3,
     duration: 3,
-    score: 50
+    score: 30
   }
 },
 {
@@ -63,7 +63,7 @@ test = [
     category: "food",
     difficulty: 3,
     duration: 3,
-    score: 20
+    score: 30
   }
 }
 ]
@@ -129,7 +129,7 @@ challenge.save!
 
 
 
-challenge = Challenge.new(
+pitch_challenge = Challenge.new(
   name: "Bar Shampoo",
   description: "Bar shampoo are not only ecologic but healtier, lighter and take less space!",
   category: "hygiene",
@@ -137,7 +137,7 @@ challenge = Challenge.new(
   duration: 3,
   score: 20
 )
-challenge.save!
+pitch_challenge.save!
 
 challenge = Challenge.new(
   name: "Powder Toothpaste",
@@ -169,7 +169,7 @@ end
 puts " created user challenge"
 
 repeater =  User.find_by(email: 'repeater@test.com') || User.create!(email: 'repeater@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
-user_challenge = UserChallenge.create!(user: repeater, challenge: Challenge.all.sample, created_at: Date.new(2023, 02, 28))
+user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 02, 28))
 
 
 user_challenge.mark_as_done(Date.new(2023, 03, 01))
