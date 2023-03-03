@@ -88,7 +88,7 @@ test = [
     duration: 3,
     score: 20
   }
-}
+},
 {
   question: "I drink coffee...",
   answer1: "From a mug/ reusable coffee cup",
