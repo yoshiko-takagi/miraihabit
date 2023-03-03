@@ -7,7 +7,7 @@ class UserChallenge < ApplicationRecord
   # validates :json ??
   def generate_schedule
     new_schedule = {}
-    (Date.today...Date.tomorrow + challenge.duration).to_a.each do |date|
+    (Date.tomorrow...Date.tomorrow + challenge.duration).to_a.each do |date|
       new_schedule[date] = false
     end
     self.schedule = new_schedule
