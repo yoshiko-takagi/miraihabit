@@ -5,17 +5,36 @@
 <div class="container" style="padding-top: 20px">
   <div class="container" style="text-align: center">
     <h1>Challenges</h1>
-    <div class="banner-footer">
-      <%= form_with url: challenges_path, method: :get, class: "d-flex banner-footer banner-footer-searchbar" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a Challenge"
-      %>
-        <%= submit_tag "Search", class: "btn btn-info " %>
-      <% end %>
-    </div>
   </div>
+  <%= simple_form_for :challenge, url: challenges_path, method: :get, data: { controller: 'autosave' } do |f| %>
+    <div class="d-flex">
+      <div>
+        <h4>Category</h4>
+        <%= f.input :category,
+            as: :radio_buttons,
+            input_html: { class: "category-selector" },
+            item_wrapper_class: 'category-item',
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: ["Food", "Hygiene", "Cleaning"],
+            legend_html: { class: "d-none"}
+             %>
+        <h4>Difficulty</h4>
+        <%= f.input :difficulty,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector'},
+            collection: [1, 2, 3],
+            label: false
+             %>
+      </div>
+    </div>
+    <button class="btn btn-info" type="submit">Submit</button>
+  <% end %>
 </div>
 </div>
 <% @challenges.each do |challenge| %>

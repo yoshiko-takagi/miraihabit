@@ -1,0 +1,34 @@
+.category-item {
+  display: inline-block;
+}
+
+.category-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.category-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  font-family: Tilt Warp;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #D3E2BB;
+  color: black;
+  border: 1px solid #626E4E;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.category-selector:checked + label {
+  background-color: #95A779;
+  color: white;
+}
+
+.challenge  {
+  .col-form-label {
+    display: none;
+
+  }
+}
