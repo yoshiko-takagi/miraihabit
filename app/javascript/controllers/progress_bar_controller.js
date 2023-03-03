@@ -8,17 +8,20 @@ export default class extends Controller {
     // define controller in html
     // define targets (score, steppers)
     // read score from score-target
-    console.log(this.scoreTarget);
-    console.log(this.stepperTargets);
+    // console.log(this.scoreTarget);
+    // console.log(this.stepperTargets);
 
+    const score = parseInt(this.scoreTarget.innerText, 10)
+    // if the stepper_score is smaller than scoreTarget content (converted to number)
     this.stepperTargets.forEach((stepper) => {
-      console.log(stepper.dataset.score)
       // store this score as a number in var
-      const score = stepper.dataset.score
-      // if the stepper_score is smaller than scoreTarget content (converted to number)
-      // if score < this.scoreTarget.to_i
+      const stepp = parseInt(stepper.dataset.score, 10)
+      // console.log(stepp)
+      // console.log(score)
+      if (stepp <= score) {
+        stepper.classList.add("completed")
+      }
       // add the class as completed to the stepper
-        // score.element.classList.add("stepper-item completed")
 
     })
     // based on score, it calculate in which stage you are

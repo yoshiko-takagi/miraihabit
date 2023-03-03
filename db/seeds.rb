@@ -95,6 +95,11 @@ challenge.save!
 
 
 user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Aplle')
+
+repeater = User.create!(email: 'repeat@test.com', password: 'password', first_name: 'Repeat', last_name: 'Repeat')
+
+UserChallenge.create(user: repeater, challenge: challenge)
+
 Question.find_each do |question|
   answer = question.answers.sample
   UserAnswer.create(user: user, answer: answer)

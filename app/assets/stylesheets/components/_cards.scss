@@ -49,11 +49,11 @@
 
 .card-dashboard {
   height: 250px;
-  background: #78C6D6;
+  background: #B0D6C5;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 30px;
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
@@ -70,7 +70,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  border-radius: 50%;
+  border-radius: 10%;
   p {
     margin: 0;
   }
