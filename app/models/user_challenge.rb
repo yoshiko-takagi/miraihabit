@@ -7,8 +7,10 @@ class UserChallenge < ApplicationRecord
   # validates :json ??
   def generate_schedule
     new_schedule = {}
-    (Date.tomorrow...Date.tomorrow + challenge.duration).to_a.each do |date|
-      new_schedule[date] = false
+    index = 0
+    challenge.duration.times do
+      new_schedule[created_at.to_date + 1 + index] = false
+      index += 1
     end
     self.schedule = new_schedule
     save
@@ -27,4 +29,5 @@ class UserChallenge < ApplicationRecord
     end
   end
 
+  # (created_at + 1)...((created_at + 1 ) +
 end
