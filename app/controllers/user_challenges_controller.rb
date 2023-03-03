@@ -5,7 +5,7 @@ class UserChallengesController < ApplicationController
 
     start_date = params.fetch(:start_date, Date.today).to_date
 
-    @user_challenges = UserChallenge.where(created_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    @user_challenges = UserChallenge.where(user: current_user, created_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
     # @user_challenges = current_user.user_challenges
     @schedule = {}
 
