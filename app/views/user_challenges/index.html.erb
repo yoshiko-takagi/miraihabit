@@ -17,7 +17,7 @@
       <% @schedule[date.to_s]&.each do |user_challenge| %>
         <div class="user-challenge">
           <% if user_challenge.schedule[date.to_s] == true %>  <!-- We will add some style to the meeting class later so let's add it now -->
-            <p class="badge bg-success text-light"><%= user_challenge.challenge.name %></p>
+            <p class="badge bg-info text-light"><%= user_challenge.challenge.name %></p>
           <% else %>
             <p class="badge bg-secondary text-light"><%= user_challenge.challenge.name %></p>
           <% end %>

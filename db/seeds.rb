@@ -9,6 +9,7 @@ UserAnswer.destroy_all
 UserChallenge.destroy_all
 Question.destroy_all
 Challenge.destroy_all
+puts "destroyed db"
 
 test = [
   {
@@ -148,6 +149,20 @@ test.each do |item|
   challenge.save!
 end
 
+puts "created q and a"
+
+# All the other challenges seeds
+challenge = Challenge.new(
+  name: "Switch to a Bamboo Toothbrush",
+  description: "Brush your teeth with a Bamboo toothbrush!Other than ecologic it's gentle on your gums.",
+  category: "hygiene",
+  difficulty: 1,
+  duration: 7,
+  score: 80 )
+challenge.save!
+
+puts "created challenges"
+
 
 user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Aplle')
 
@@ -160,6 +175,17 @@ Question.find_each do |question|
   UserAnswer.create(user: user, answer: answer)
 end
 
+puts "created useranswer"
+
 Challenge.all.sample(2).each do |challenge|
   UserChallenge.create(user: user, challenge: challenge, completed: true)
 end
+
+puts " created user challenge"
+
+repeater =  User.find_by(email: 'repeater@test.com') || User.create!(email: 'repeater@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
+user_challenge = UserChallenge.create!(user: repeater, challenge: Challenge.all.sample, created_at: Date.new(2023, 02, 28))
+
+
+puts "created repeater and user challenge"
+puts user_challenge.schedule
