@@ -3,9 +3,6 @@
   <div class="row">
     <div class ="col-6 d-flex flex-column">
       <div class="challenge-card-small-infos" style="justify-content-between text-align: center">
-        <div class="difficulty-card">
-          <h2>Difficulty <%= challenge.difficulty %></h2>
-        </div>
       </div>
     </div>
     <div class ="col-6 d-flex flex-column">
@@ -16,10 +13,10 @@
     <div class="col-6 d-flex flex-column ">
       <%#= link_to dashboard_path do %>
         <%# <i class="fa-solid fa-plus fs-4"></i>  Add to your dashboard %>
-      <%# end %>
-      <% unless current_user.challenges.include?(challenge) %>
-        <%= render "user_challenges/user_challenge_create_form", challenge: challenge, user_challenge: @user_challenge %>
-      <% end %>
+        <%# end %>
+        <% unless current_user.challenges.include?(challenge) %>
+          <%= render "user_challenges/user_challenge_create_form", challenge: challenge, user_challenge: @user_challenge %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
