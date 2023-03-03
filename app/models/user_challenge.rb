@@ -26,4 +26,5 @@ class UserChallenge < ApplicationRecord
       self.completed = false
     end
   end
+
 end

@@ -24,4 +24,23 @@ class UserChallengesController < ApplicationController
     @user_challenge.save
     redirect_to calendar_path
   end
+
+  def create
+    @challenge = Challenge.find(params[:challenge_id])
+    @user_challenge = UserChallenge.new
+    @user_challenge.challenge = @challenge
+    @user_challenge.user = current_user
+    if @user_challenge.save
+      redirect_to dashboard_path
+      authorize @user_challenge
+    else
+      render "challenges/index"
+    end
+  end
+
+  private
+
+  def user_challenge_params
+    params.require(:user_challenge).permit(:challenge_id)
+  end
 end
