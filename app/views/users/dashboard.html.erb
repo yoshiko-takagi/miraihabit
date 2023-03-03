@@ -1,12 +1,15 @@
-<div class="container">
+<div class="container" data-controller="progress-bar">
   <h1>Dashboard</h1>
-  <div class="card-dashboard" data-controller="progress-bar">
-    <div class="score-circle">
-      <p class="score-text">Score</p>
-      <p class="score-number" data-progress-bar-target="score"><%#= @user.total_score %>450</p>
+  <div class="card-dashboard" >
+    <h2 class="score-text">Your Score</h2>
+    <div class="card-dashboard-score">
+      <h1 class="score-number" data-progress-bar-target="score"><%= @user.total_score %></h1>
     </div>
-    <div>
-      <p>Goal score: 1000</p>
+  </div>
+  <div class="card-dashboard">
+    <div class="d-flex p-3 justify-content-between">
+      <h2>Your Progress</h2>
+      <h2>Goal score: 1000</h2>
     </div>
     <div class="stepper-wrapper">
       <div class="stepper-item" data-progress-bar-target="stepper" data-score="100">
@@ -39,8 +42,8 @@
       </div>
     </div>
   </div>
+  <hr>
   <% @user.challenges.each do |challenge| %>
     <%= render 'challenges/card', challenge: challenge %>
   <% end %>
-  <script src="js/progress-bar.js"></script>
 </div>
