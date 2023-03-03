@@ -12,6 +12,7 @@ Challenge.destroy_all
 puts "destroyed db"
 
 test = [
+  #1
   {
     question: "When I go grocery shopping I...",
     answer1: "Bring reusable bags",
@@ -25,32 +26,7 @@ test = [
       score: 20
     }
   },
-  {
-    question: "I wash my hair with...",
-    answer1: "Bar shampoo",
-    answer2: "Shampoo in a bottle",
-    challenge: {
-      name: "Bar Shampoo",
-      description: "Bar shampoo are not only ecologic but healtier, lighter and take less space!",
-      category: "hygiene",
-      difficulty: 1,
-      duration: 3,
-      score: 20
-    }
-  },
-  {
-  question: "I brush my teeth with...",
-  answer1: "Toothpaste powder/tablets",
-  answer2: "Toothpaste in a bottle",
-  challenge: {
-    name: "Powder Toothpaste",
-    description: "The average person uses about 6 tubes of toothpaste a year. If we all switched from tube toothpaste to powder or tablet toothpaste in paper packaging, it would make a huge difference!",
-    category: "hygiene",
-    difficulty: 1,
-    duration: 3,
-    score: 20
-  }
-},
+#2
 {
   question: "When cleaning I use...",
   answer1: "A washable cloth",
@@ -60,58 +36,6 @@ test = [
     description: "Don't waste money and plastic for single wet whipes, a simple cloth can be easily washed with baking soda.",
     category: "cleaning",
     difficulty: 2,
-    duration: 3,
-    score: 20
-  }
-},
-{
-  question: "When cleaning I use...",
-  answer1: "Eco friendly sponges",
-  answer2: "Regular sponges (synthetic)",
-  challenge: {
-    name: "Eco Friendly Sponges",
-    description: "Most sponges are made of either polyester, polyurethane or nylon, which are not recyclable and release microplastics into the water as they fall apart while scrubbing your dishes. You can switch to more eco-friendly sponges that are made of sea sponges, cellulose or coconut fiber.",
-    category: "cleaning",
-    difficulty: 2,
-    duration: 3,
-    score: 20
-  }
-},
-{
-  question: "I wash my clothes with...",
-  answer1: "Detergent sheets",
-  answer2: "Bottled detergent",
-  challenge: {
-    name: "Detergent Sheets",
-    description: "Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great.",
-    category: "cleaning",
-    difficulty: 2,
-    duration: 3,
-    score: 20
-  }
-},
-{
-  question: "I drink coffee...",
-  answer1: "From a mug/ reusable coffee cup",
-  answer2: "From a takeout cup",
-  challenge: {
-    name: "Ditch Coffee Cups",
-    description: "Although coffee cups are made of paper, the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which is a petroleum-based plastic.",
-    category: "food",
-    difficulty: 3,
-    duration: 3,
-    score: 20
-  }
-},
-{
-  question: "I buy my groceries...",
-  answer1: "From a plastic-free bulk buying grocery store",
-  answer2: "From a regular grocery store",
-  challenge: {
-    name: "Plastic-Free Groceries",
-    description: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plstic-free grocery stores will make a huge difference!",
-    category: "food",
-    difficulty: 3,
     duration: 3,
     score: 20
   }
@@ -127,6 +51,19 @@ test = [
     difficulty: 3,
     duration: 3,
     score: 50
+  }
+},
+{
+  question: "I buy my groceries...",
+  answer1: "From a plastic-free bulk buying grocery store",
+  answer2: "From a regular grocery store",
+  challenge: {
+    name: "Plastic-Free Groceries",
+    description: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plstic-free grocery stores will make a huge difference!",
+    category: "food",
+    difficulty: 3,
+    duration: 3,
+    score: 20
   }
 }
 ]
@@ -144,7 +81,7 @@ test.each do |item|
     difficulty: item[:challenge][:difficulty],
     duration: item[:challenge][:duration],
     score: item[:challenge][:score],
-    answer: not_eco_answer,
+    answer: not_eco_answer
   )
   challenge.save!
 end
@@ -158,17 +95,84 @@ challenge = Challenge.new(
   category: "hygiene",
   difficulty: 1,
   duration: 7,
-  score: 80 )
+  score: 80)
 challenge.save!
+
+challenge = Challenge.new(
+  name: "Eco Friendly Sponges",
+  description: "Most sponges are made of either polyester, polyurethane or nylon, which are not recyclable and release microplastics into the water as they fall apart while scrubbing your dishes. You can switch to more eco-friendly sponges that are made of sea sponges, cellulose or coconut fiber.",
+  category: "cleaning",
+  difficulty: 2,
+  duration: 3,
+  score: 20)
+challenge.save!
+
+challenge = Challenge.new(
+  name: "Detergent Sheets",
+  description: "Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great.",
+  category: "cleaning",
+  difficulty: 2,
+  duration: 3,
+  score: 20
+ )
+challenge.save!
+
+challenge = Challenge.new(
+    name: "Ditch Coffee Cups",
+    description: "Although coffee cups are made of paper, the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which is a petroleum-based plastic.",
+    category: "food",
+    difficulty: 3,
+    duration: 3,
+    score: 20
+  )
+challenge.save!
+
+
+
+challenge = Challenge.new(
+  name: "Bar Shampoo",
+  description: "Bar shampoo are not only ecologic but healtier, lighter and take less space!",
+  category: "hygiene",
+  difficulty: 1,
+  duration: 3,
+  score: 20
+)
+challenge.save!
+
+challenge = Challenge.new(
+  name: "Powder Toothpaste",
+  description: "The average person uses about 6 tubes of toothpaste a year. If we all switched from tube toothpaste to powder or tablet toothpaste in paper packaging, it would make a huge difference!",
+  category: "hygiene",
+  difficulty: 1,
+  duration: 3,
+  score: 20
+)
+challenge.save!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 puts "created challenges"
 
 
 user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Aplle')
 
-repeater = User.create!(email: 'repeat@test.com', password: 'password', first_name: 'Repeat', last_name: 'Repeat')
+# repeater = User.create!(email: 'repeat@test.com', password: 'password', first_name: 'Repeat', last_name: 'Repeat')
 
-UserChallenge.create(user: repeater, challenge: challenge)
+# UserChallenge.create(user: repeater, challenge: challenge)
 
 Question.find_each do |question|
   answer = question.answers.sample
