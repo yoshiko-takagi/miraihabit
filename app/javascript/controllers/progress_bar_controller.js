@@ -16,9 +16,9 @@ export default class extends Controller {
       // store this score as a number in var
       const score = stepper.dataset.score
       // if the stepper_score is smaller than scoreTarget content (converted to number)
-      if score < this.scoreTarget.to_i
+      // if score < this.scoreTarget.to_i
       // add the class as completed to the stepper
-        score.element.classList.add("stepper-item completed")
+        // score.element.classList.add("stepper-item completed")
 
     })
     // based on score, it calculate in which stage you are
