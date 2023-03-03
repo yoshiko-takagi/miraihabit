@@ -166,7 +166,7 @@ Challenge.all.sample(2).each do |challenge|
   UserChallenge.create(user: user, challenge: challenge, completed: true)
 end
 
-puts " created user challenge"
+puts "created user challenge"
 
 repeater =  User.find_by(email: 'repeater@test.com') || User.create!(email: 'repeater@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
 user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 02, 28))
@@ -178,4 +178,8 @@ user_challenge.mark_as_done(Date.new(2023, 03, 02))
 
 
 puts "created repeater and user challenge"
-puts user_challenge.schedule
+# puts user_challenge.schedule
+
+new_user = User.find_by(email: 'new@test.com') || User.create!(email: 'new@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
+
+puts "created new user"
