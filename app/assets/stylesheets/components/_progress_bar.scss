@@ -1,5 +1,8 @@
 .stepper-wrapper {
-  margin-top: auto;
+  font-family: $body-font;
+  font-size: 27px;
+  // font-weight: bold;
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -19,7 +22,7 @@
 .stepper-item::before {
   position: absolute;
   content: "";
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #c0bdbd;
   width: 100%;
   top: 20px;
   left: -50%;
@@ -29,7 +32,7 @@
 .stepper-item::after {
   position: absolute;
   content: "";
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #c0bdbd;
   width: 100%;
   top: 20px;
   left: 50%;
@@ -45,7 +48,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #ccc;
+  background: #c0bdbd;
   margin-bottom: 6px;
 }
 
@@ -54,13 +57,13 @@
 }
 
 .stepper-item.completed .step-counter {
-  background-color: #4bb543;
+  background-color: #95A779;
 }
 
 .stepper-item.completed::after {
   position: absolute;
   content: "";
-  border-bottom: 2px solid #4bb543;
+  border-bottom: 2px solid #95A779;
   width: 100%;
   top: 20px;
   left: 50%;
