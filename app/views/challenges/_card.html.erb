@@ -1,9 +1,15 @@
-<div class="card-product mb-3">
+<div class="challenge-card-small mb-3">
   <%= image_tag challenge.category%>
-  <div class="card-product-infos">
-    <h2><%= challenge.name %></h2>
-    <h6>Level: <%= challenge.difficulty %></h6>
-    <h6><%= challenge.score %> points</h6>
-    <p>Product description with <strong>relevant info</strong> only.</p>
+  <div class="row">
+    <div class ="col-6 d-flex flex-column">
+      <div class="challenge-card-small-infos" style="justify-content-between text-align: center">
+        <div class="difficulty-card">
+          <h2>Difficulty <%= challenge.difficulty %></h2>
+        </div>
+      </div>
+    </div>
+    <h3><%= challenge.name %></h3>
+    <h4>Level: <%= challenge.difficulty %></h4>
+    <h5><%= challenge.score %> points</h5>
   </div>
 </div>
