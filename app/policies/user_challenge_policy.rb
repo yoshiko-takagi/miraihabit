@@ -17,4 +17,9 @@ class UserChallengePolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def tracker?
+    true
+  end
+
 end

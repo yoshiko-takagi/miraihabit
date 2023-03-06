@@ -38,6 +38,10 @@ class UserChallengesController < ApplicationController
     end
   end
 
+  def tracker
+    @user_challenges = policy_scope(UserChallenge)
+  end
+
   private
 
   def user_challenge_params
