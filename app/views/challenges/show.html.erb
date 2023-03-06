@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="challenge-card-show">
+    <h1>
+      <%= @challenge.name %>
+    </h1>
+    <div>
+      <% if @challenge.difficulty == 1 %>
+        <h4>Difficulty: <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></h4>
+      <% elsif @challenge.difficulty == 2 %>
+        <h4>Difficulty: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></h4>
+      <% elsif @challenge.difficulty == 3 %>
+        <h4>Difficulty: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h4>
+      <% end %>
+      <h4><%= @challenge.score / 7%> points</h4>
+    </div>
+    <div>
+      <p  class="mt-4"><%= @challenge.description %></p>
+    </div>
+    <% unless current_user.challenges.include?(@challenge) %>
+      <%= render "user_challenges/user_challenge_create_form", challenge: @challenge, user_challenge: @user_challenge %>
+    <% end %>
+  </div>
+</div>

@@ -5,7 +5,9 @@ class ChallengesController < ApplicationController
     @user_challenge = UserChallenge.new
   end
 
-  # def create
-
-  # end
+  def show
+    @challenge = Challenge.find(params[:id])
+    @user_challenge = UserChallenge.new
+    authorize @challenge
+  end
 end

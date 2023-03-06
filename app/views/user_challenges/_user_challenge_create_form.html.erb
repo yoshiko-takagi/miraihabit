@@ -1,3 +1,7 @@
 <%= simple_form_for [challenge, user_challenge] do |f| %>
-  <%= f.submit "Add to dashboard" %>
+  <%#= f.submit "Add to dashboard" %>
+  <%= f.button :button do %>
+    <i class="fa-solid fa-square-plus"></i>
+    Add to your dashboard
+  <% end %>
 <% end %>
