@@ -6,7 +6,13 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
+  # export to tracker
   def dashboard?
     true
   end
+
+  def tracker?
+    true
+  end
+
 end
