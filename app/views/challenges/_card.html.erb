@@ -10,6 +10,7 @@
     <%#= link_to dashboard_path do %>
       <%# <i class="fa-solid fa-plus fs-4"></i>  Add to your dashboard %>
       <%# end %>
+      <button type="button" class="btn btn-info"><i class="fa-solid fa-circle-info"></i></button>
       <% unless current_user.challenges.include?(challenge) %>
         <%= render "user_challenges/user_challenge_create_form", challenge: challenge, user_challenge: @user_challenge %>
       <% end %>
