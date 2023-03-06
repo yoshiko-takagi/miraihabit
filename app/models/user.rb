@@ -22,6 +22,6 @@ class User < ApplicationRecord
 
 
   def total_score
-    completed_challenges.sum(:score) + answer_challenges.sum(:score)
+    user_challenges.sum(:score) + answer_challenges.sum(:max_score)
   end
 end
