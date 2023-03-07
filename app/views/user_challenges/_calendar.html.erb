@@ -1,7 +1,7 @@
 
 <div class="container">
   <h1 class="my-3">My Challenge Tracker</h1>
-  <h2><span class="badge bg-secondary"><%= Date.current.strftime("%b %d, %Y") %></span></h2>
+  <h1><span class="badge bg-success"><%= Date.current.strftime("%b %d, %Y") %></span></h1>
 
   <div >
     <%# <i class="fa-solid fa-square-check fs-4"></i> %>
@@ -18,7 +18,7 @@
       <% @schedule[date.to_s]&.each do |user_challenge| %>
         <div class="user-challenge">
           <% if user_challenge.schedule[date.to_s] == true %>  <!-- We will add some style to the meeting class later so let's add it now -->
-            <p class="badge bg-info text-light"><%= user_challenge.challenge.name %></p>
+            <p class="badge bg-success text-light"><%= user_challenge.challenge.name %></p>
           <% else %>
             <p class="badge bg-secondary text-light"><%= user_challenge.challenge.name %></p>
           <% end %>

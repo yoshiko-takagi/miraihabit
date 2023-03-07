@@ -5,6 +5,14 @@ require "open-uri"
 # This is the assesment test content.
 # You can change the questions and relative answers here
 
+def generate_fake_avatar
+  url = 'https://this-person-does-not-exist.com/en'
+  doc = Nokogiri::HTML(URI.open(url).read)
+  src = doc.search('#avatar').first['src']
+  photo_url = "https://this-person-does-not-exist.com#{src}"
+end
+
+
 #questions seeds
 UserAnswer.destroy_all
 UserChallenge.destroy_all
@@ -18,8 +26,9 @@ test = [
     answer1: "Bring reusable bags",
     answer2: "Buy grocery bags",
     challenge: {
-      name: "Bring reusable Bags",
-      description: "An eco bag can fit perfectly folded up inside your bag and taken with you anywhere. Say no to plastic bags and use an eco bag instead!",
+      name: "Bring Reusable Bags",
+      description_what: "A reusable grocery bag can replace plastic or paper bags at the store. It should be portable and be able to comfortably hold a load of groceries or other goods without ripping or collapsing. It can fit perfectly folded up inside your bag and taken with you anywhere.",
+      description_why: "You can save money, as some cities and states have started charging a fee for plastic bags. Also you can waste less food. Carry your own reusable bag and you’ll shop smarter as well; after all, if you only have room for a certain amount of groceries per bag, you could end up spending less.",
       category: "food",
       difficulty: 1,
       duration: 7,
@@ -33,8 +42,9 @@ test = [
   answer1: "A washable cloth",
   answer2: "Single use wet whipes",
   challenge: {
-    name: "Use a washable cloth",
-    description: "Save money and reduce your plastic consumption by simply converting to a cloth, which can be easily washed and reused.",
+    name: "Use a Washable Cloth",
+    description_what: "A washable and reusable cleaning cloth is a zero-waste accessory and you can keep and reuse it for several years, saving you the use of hundreds of the traditional disposable cleaning cloths.",
+    description_why: "Save money and reduce your plastic consumption by simply converting to a cloth, which can be easily washed and reused.",
     category: "cleaning",
     difficulty: 2,
     duration: 7,
@@ -48,7 +58,9 @@ test = [
   answer2: "Get takeout",
   challenge: {
     name: "Make Your Lunch",
-    description: "Bring your own LunchBox to work or school. About 44% of ocean plastics are linked to takeout food.",
+    description_what: "Bring your own lunch box to work or school.",
+    description_why: "About 44% of ocean plastics are linked to takeout food, so bringing your own lunch to work or school is good way to reduce your plastic consumption.
+    Preparing your own lunch also cuts your calorie consumption by 20-35%. It can also save you an average of $4.70 per day.",
     category: "food",
     difficulty: 3,
     duration: 7,
@@ -61,8 +73,9 @@ test = [
   answer1: "From a plastic-free bulk buying grocery store",
   answer2: "From a regular grocery store",
   challenge: {
-    name: "Buy plastic-Free Groceries",
-    description: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plstic-free grocery stores will make a huge difference!",
+    name: "Buy Plastic-Free Groceries",
+    description_what: "Bulk stores or zero waste stores are a new eco-friendly revolution. They commit to offer the most sustainable food with the less packaging. ",
+    description_why: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plstic-free grocery stores will make a huge difference!",
     category: "food",
     difficulty: 3,
     duration: 7,
@@ -78,11 +91,11 @@ test.each do |item|
   eco_answer = Answer.create(question: question, content: item[:answer1])
   not_eco_answer = Answer.create(question: question, content: item[:answer2])
 
-
   # Create Associated challenges below:
   challenge = Challenge.new(
     name: item[:challenge][:name],
-    description: item[:challenge][:description],
+    description_what: item[:challenge][:description_what],
+    description_why: item[:challenge][:description_why],
     category: item[:challenge][:category],
     difficulty: item[:challenge][:difficulty],
     duration: item[:challenge][:duration],
@@ -92,13 +105,16 @@ test.each do |item|
   file = File.open(item[:challenge][:image_path])
   challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   challenge.save!
+
 end
 
 
 # All the other challenges seeds
 challenge = Challenge.new(
   name: "Use a Bamboo Toothbrush",
-  description: "Brush your teeth with a Bamboo toothbrush!Other than ecologic it's gentle on your gums.",
+  description_what: "There are toothbrushes that have handles that are made out of an all-natural, biodegradable material known as bamboo and bristles that are made out of nylon or nylon4.",
+  description_why: "It's gentle on your gums and is just as effective at cleaning your teeth.
+  It is estimated that it could take 50, 60 or even 100 years for a plastic toothbrush to be broken down once it is tossed into the garbage. ",
   category: "hygiene",
   difficulty: 1,
   duration: 7,
@@ -108,8 +124,10 @@ challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
 challenge = Challenge.new(
-  name: "Use eco Sponges",
-  description: "Most sponges are made of either polyester, polyurethane or nylon, which are not recyclable and release microplastics into the water as they fall apart while scrubbing your dishes. You can switch to more eco-friendly sponges that are made of sea sponges, cellulose or coconut fiber.",
+  name: "Use Eco Sponges",
+  description_what: "Most sponges are made of either polyester, polyurethane or nylon, which are not recyclable and release microplastics into the water as they fall apart while scrubbing your dishes. Zero waste, eco friendly sponges are the perfect alternative to sponges for dishes that are typically made from plastic.
+  You can switch to more eco-friendly sponges that are made of sea sponges, cellulose or coconut fiber.",
+  description_why: "Switching to a natural, eco dish sponge is far more eco-friendly than using a commercial, disposable one!",
   category: "cleaning",
   difficulty: 2,
   duration: 7,
@@ -119,8 +137,9 @@ challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
 challenge = Challenge.new(
-  name: "Use detergent Sheets",
-  description: "The average family uses around 13 bottles of laundry detergent a year. Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great.",
+  name: "Use Detergent Sheets",
+  description_what: "Plastic-free sheets of concentrated laundry detergent are made with ingredients that are held together by a resin and dissolvable paper.",
+  description_why: "The average family uses around 13 bottles of laundry detergent a year. Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great.",
   category: "cleaning",
   difficulty: 2,
   duration: 7,
@@ -131,8 +150,9 @@ challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
 challenge = Challenge.new(
-    name: "Use dutch Coffee Cups",
-    description: "Although coffee cups are made of paper, the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which is a petroleum-based plastic which take around 20-30 years to break down after being discarded.",
+    name: "Ditch Coffee Cups",
+    description_what: "Coffee cups are made of paper, but the lining on the inside to reinforce it is made of either plastic resin or polyethylene.",
+    description_why: "The material used for the lining can take around 20-30 years to break down after being discarded.",
     category: "food",
     difficulty: 3,
     duration: 7,
@@ -143,8 +163,9 @@ challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
 pitch_challenge = Challenge.new(
-  name: "Use a bar Shampoo",
-  description: "The average person uses around 11 bottles of shampoo a year. Bar shampoo is not only good for the environment, but it takes up less space in the shower and is more travel-friendly.",
+  name: "Use a Bar Shampoo",
+  description_what: "A shampoo bar is a solid version of your standard liquid option.",
+  description_why: "The average person uses around 11 bottles of shampoo a year. Bar shampoo is not only good for the environment, but it takes up less space in the shower and is more travel-friendly.",
   category: "hygiene",
   difficulty: 1,
   duration: 7,
@@ -155,8 +176,9 @@ challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 pitch_challenge.save!
 
 challenge = Challenge.new(
-  name: "Use a powder Toothpaste",
-  description: "The average person uses about 6 tubes of toothpaste a year. If we all switched from tube toothpaste to powder or tablet toothpaste in paper packaging, it would make a huge difference!",
+  name: "Use a Powder Toothpaste",
+  description_what: "Tooth powder is a mixture of a variety of ingredients that acts as an alternative to toothpaste as a cleaning agent.",
+  description_why: "The average person uses about 6 tubes of toothpaste a year. If we all switched from tube toothpaste to powder or tablet toothpaste in paper packaging, it would make a huge difference!y",
   category: "hygiene",
   difficulty: 1,
   duration: 7,
@@ -167,11 +189,12 @@ challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
 
+# Users seed
 
+user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Apple')
+file = URI.open(generate_fake_avatar)
+user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
-
-
-user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Aplle')
 
 Question.find_each do |question|
   answer = question.answers.sample
@@ -185,8 +208,10 @@ end
 
 
 repeater = User.find_by(email: 'repeater@test.com') || User.create!(email: 'repeater@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
-user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 03, 04))
+file = URI.open(generate_fake_avatar)
+repeater.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
+user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 03, 04))
 
 # user_challenge.mark_as_done(Date.new(2023, 03, 04))
 user_challenge.mark_as_done(Date.new(2023, 03, 05))
@@ -196,3 +221,5 @@ user_challenge.mark_as_done(Date.new(2023, 03, 05))
 # puts user_challenge.schedule
 
 new_user = User.find_by(email: 'new@test.com') || User.create!(email: 'new@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
+file = URI.open(generate_fake_avatar)
+new_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
