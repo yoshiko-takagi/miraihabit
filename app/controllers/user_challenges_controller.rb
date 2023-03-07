@@ -39,7 +39,8 @@ class UserChallengesController < ApplicationController
     end
   end
 
-  def tracker
+    # tracker
+  def dashboard
     @user = current_user
     authorize @user
     # @user_challenge = UserChallenge.new
