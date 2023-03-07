@@ -6,10 +6,6 @@ class UserChallengePolicy < ApplicationPolicy
     end
   end
 
-  def index?
-    true
-  end
-
   def update?
     user == record.user
   end
@@ -17,10 +13,6 @@ class UserChallengePolicy < ApplicationPolicy
   def create?
     true
   end
-
-  # def tracker?
-  #   true
-  # end
 
   def dashboard?
     true
