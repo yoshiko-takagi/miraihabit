@@ -172,7 +172,7 @@ pitch_challenge = Challenge.new(
   max_score: 70
 )
 file = File.open("app/assets/images/challenge/24112916_s.jpg")
-challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+pitch_challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 pitch_challenge.save!
 
 challenge = Challenge.new(
