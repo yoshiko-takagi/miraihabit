@@ -16,6 +16,9 @@
     <div>
       <p  class="mt-4"><%= @challenge.description %></p>
     </div>
+    <div>
+      <%= cl_image_tag @challenge.photo.key  %>
+    </div>
     <% unless current_user.challenges.include?(@challenge) %>
       <%= render "user_challenges/user_challenge_create_form", challenge: @challenge, user_challenge: @user_challenge %>
     <% end %>

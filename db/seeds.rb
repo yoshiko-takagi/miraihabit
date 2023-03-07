@@ -24,7 +24,8 @@ test = [
       category: "food",
       difficulty: 1,
       duration: 7,
-      max_score: 70
+      max_score: 70,
+      image_path: "app/assets/images/challenge/23208754_s.jpg"
     }
   },
 #2
@@ -38,7 +39,8 @@ test = [
     category: "cleaning",
     difficulty: 2,
     duration: 7,
-    max_score: 140
+    max_score: 140,
+    image_path: "app/assets/images/challenge/23129534_s.jpg"
   }
 },
 {
@@ -51,7 +53,8 @@ test = [
     category: "food",
     difficulty: 3,
     duration: 7,
-    max_score: 280
+    max_score: 280,
+    image_path: "app/assets/images/challenge/2630416_s.jpg"
   }
 },
 {
@@ -64,7 +67,8 @@ test = [
     category: "food",
     difficulty: 3,
     duration: 7,
-    max_score: 280
+    max_score: 280,
+    image_path: "app/assets/images/challenge/2589170_s.jpg"
   }
 }
 ]
@@ -86,6 +90,8 @@ test.each do |item|
     max_score: item[:challenge][:max_score],
     answer: not_eco_answer
   )
+  file = File.open(item[:challenge][:image_path])
+  challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   challenge.save!
 end
 
@@ -99,7 +105,7 @@ challenge = Challenge.new(
   difficulty: 1,
   duration: 7,
   max_score: 70)
-file = URI.open("../app/assets/images/challenge/4741039_s.jpg")
+file = File.open("app/assets/images/challenge/4741039_s.jpg")
 challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
@@ -110,7 +116,7 @@ challenge = Challenge.new(
   difficulty: 2,
   duration: 7,
   max_score: 140)
-file = URI.open("../app/assets/images/challenge/4728804_s.jpg")
+file = File.open("app/assets/images/challenge/4728804_s.jpg")
 challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
@@ -122,7 +128,7 @@ challenge = Challenge.new(
   duration: 7,
   max_score: 140
  )
-file = URI.open("../app/assets/images/challenge/grove-colaundry-detergent-sheets-ecomm-ft.jpeg")
+file = File.open("app/assets/images/challenge/grove-colaundry-detergent-sheets-ecomm-ft.jpeg")
 challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
@@ -134,7 +140,7 @@ challenge = Challenge.new(
     duration: 7,
     max_score: 280
   )
-file = URI.open("../app/assets/images/challenge/25943428_s.jpg")
+file = File.open("app/assets/images/challenge/25943428_s.jpg")
 challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
@@ -146,7 +152,7 @@ pitch_challenge = Challenge.new(
   duration: 7,
   max_score: 70
 )
-file = URI.open("../app/assets/images/challenge/24112916_s.jpg")
+file = File.open("app/assets/images/challenge/24112916_s.jpg")
 challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 pitch_challenge.save!
 
@@ -158,7 +164,7 @@ challenge = Challenge.new(
   duration: 7,
   max_score: 70
 )
-file = URI.open("../app/assets/images/challenge/toothbrush-4493911_1280-1280x720.jpeg")
+file = File.open("app/assets/images/challenge/toothbrush-4493911_1280-1280x720.jpeg")
 challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
