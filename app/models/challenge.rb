@@ -4,5 +4,5 @@ class Challenge < ApplicationRecord
   has_many :users, through: :user_challenges
   has_one_attached :photo
 
-  validates :difficulty, :name, :description, :max_score, :duration, presence: true
+  validates :difficulty, :name, :description_what, :description_why, :max_score, :duration, presence: true
 end
