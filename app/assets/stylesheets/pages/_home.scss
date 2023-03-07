@@ -1,1 +1,49 @@
 // Specific CSS for your home-page
+#home-banner {
+  background-size: cover;
+  background-position: center;
+  background-color: $primary;
+  width: 100%;
+  padding: 10px 10px;
+  margin: 0 auto;
+  box-shadow: 3px 3px 10px rgba(111, 137, 134, 0.2);
+  text-align: center;
+}
+
+#home-banner h2 {
+  color: $gray;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+}
+
+#home-container {
+  width: 100%;
+  // padding: 0 10%;
+  margin: 0 auto;
+  background-color: $primary;
+}
+
+#home-container h3 {
+  font-family: $headers-font;
+}
+
+#home-container p {
+  $body-font: "Overpass", "Helvetica", "sans-serif";
+}
+
+#btn-home-cta {
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: $orange;
+  border-radius: 25px;
+  font-size: 21px;
+  color: #f8f9fa;
+  text-decoration: none;
+  text-align: center;
+}
+
+// $body-font: "Overpass", "Helvetica", "sans-serif";
+// $body-font: "Inter", "Helvetica", "sans-serif";
+
+// $headers-font: "Tilt Warp", "Helvetica", "sans-serif";
