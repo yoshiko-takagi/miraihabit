@@ -1,9 +1,9 @@
 <%# <div class="banner" style="background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_path"139606_s.jpg"%>
-<div class="mx-3 my-3">
-  <h3 class="">Start Your Plastic-free Journey!</h3>
+<div id="home-banner">
+  <h2>Start Your Plastic-free Journey!</h2>
 </div>
 </div>
-<div class="custom-container">
+<div id="home-container">
   <div id="carouselExampleDark" class="carousel carousel-dark slide d-flex justify-content-center">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -15,7 +15,7 @@
         <img src=<%= image_path "Carousel_1.PNG" %> class="d-block w-100 custom-carousel" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h3 class="">Step 1</h3>
-          <h4 class="">Take a quick online <strong>Assessment</strong> to measure your plastic footprint</h4>
+          <p class="">Take a quick online <strong>Assessment</strong> to measure your plastic footprint</p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
@@ -44,6 +44,7 @@
   </div>
   <div class="d-grid gap-2 col-6 mx-auto">
     <%# <button class="btn btn-info my-3" type="button">Sign up now</button> %>
-    <%= link_to "Go to an Assessment", question_path(@first_question), class: "btn btn-primary my-3" %>
+    <%= link_to "Go to an Assessment", question_path(@first_question), id: "btn-home-cta" %>
+    <%# class: "btn btn-light-gray my-3" %>
   </div>
 </div>
