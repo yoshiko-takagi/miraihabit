@@ -1,17 +1,14 @@
 <div class="challenge-card-small justify-content-between">
   <%= image_tag "#{challenge.category}.png"%>
-  
   <div class="row justify-content-between">
     <%# <div class ="col-4 d-flex flex-column"> %>
-      <%# <div class="challenge-card-small-infos" style="justify-content-between text-align: center"> %>
-      <%# </div> %>
+    <%# <div class="challenge-card-small-infos" style="justify-content-between text-align: center"> %>
+    <%# </div> %>
     <%# </div> %>
     <div class ="col-8">
-
       <h3><%= challenge.name %></h3>
       <h4 class="text-center">Difficulty: <%= challenge.difficulty %></h4>
       <h5><%= challenge.max_score %> points</h5>
-
     </div>
     <div class="col-4">
       <%#= link_to dashboard_path do %>
