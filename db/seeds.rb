@@ -10,7 +10,6 @@ UserAnswer.destroy_all
 UserChallenge.destroy_all
 Question.destroy_all
 Challenge.destroy_all
-puts "destroyed db"
 
 test = [
   #1
@@ -95,7 +94,6 @@ test.each do |item|
   challenge.save!
 end
 
-puts "created q and a"
 
 # All the other challenges seeds
 challenge = Challenge.new(
@@ -168,7 +166,6 @@ file = File.open("app/assets/images/challenge/toothbrush-4493911_1280-1280x720.j
 challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
-puts "created challenges"
 
 
 
@@ -181,13 +178,11 @@ Question.find_each do |question|
   UserAnswer.create(user: user, answer: answer)
 end
 
-puts "created useranswer"
 
 Challenge.all.sample(2).each do |challenge|
   UserChallenge.create(user: user, challenge: challenge, completed: true)
 end
 
-puts "created user challenge"
 
 repeater = User.find_by(email: 'repeater@test.com') || User.create!(email: 'repeater@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
 user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 03, 04))
@@ -198,9 +193,6 @@ user_challenge.mark_as_done(Date.new(2023, 03, 05))
 
 
 
-puts "created repeater and user challenge"
 # puts user_challenge.schedule
 
 new_user = User.find_by(email: 'new@test.com') || User.create!(email: 'new@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
-
-puts "created new user"
