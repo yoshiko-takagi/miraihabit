@@ -1,22 +1,20 @@
-<div class="challenge-card-small">
+<div class="challenge-card-small justify-content-between">
   <%= image_tag "#{challenge.category}.png"%>
   <div class="row">
-    <div class ="col-6 d-flex flex-column">
-      <div class="challenge-card-small-infos" style="justify-content-between text-align: center">
-      </div>
-    </div>
-    <div class ="col-6 d-flex flex-column">
+    <div class ="d-flex flex-column">
       <h3><%= challenge.name %></h3>
-      <h4>Level: <%= challenge.difficulty %></h4>
+      <h4 class="text-center">Difficulty: <%= challenge.difficulty %></h4>
       <h5><%= challenge.max_score %> points</h5>
+
     </div>
-    <div class="col-6 d-flex flex-column ">
-      <%#= link_to dashboard_path do %>
-        <%# <i class="fa-solid fa-plus fs-4"></i>  Add to your dashboard %>
-        <%# end %>
-        <% unless current_user.challenges.include?(challenge) %>
-          <%= render "user_challenges/user_challenge_create_form", challenge: challenge, user_challenge: @user_challenge %>
-        <% end %>
-      </div>
+  </div>
+  <div class="d-flex flex-column me-3">
+    <%#= link_to dashboard_path do %>
+      <%# <i class="fa-solid fa-plus fs-4"></i>  Add to your dashboard %>
+      <%# end %>
+      <button type="button" class="btn btn-info"><i class="fa-solid fa-circle-info"></i></button>
+      <% unless current_user.challenges.include?(challenge) %>
+        <%= render "user_challenges/user_challenge_create_form", challenge: challenge, user_challenge: @user_challenge %>
+      <% end %>
     </div>
   </div>
