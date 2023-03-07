@@ -23,7 +23,7 @@ class UserChallengesController < ApplicationController
     authorize @user_challenge
     @user_challenge.schedule[Date.today.to_s] = !@user_challenge.schedule[Date.today.to_s]
     @user_challenge.save
-    redirect_to calendar_path
+    redirect_to dashboard_path
   end
 
   def create
