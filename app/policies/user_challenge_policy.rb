@@ -18,8 +18,11 @@ class UserChallengePolicy < ApplicationPolicy
     true
   end
 
-  def tracker?
+  # def tracker?
+  #   true
+  # end
+
+  def dashboard?
     true
   end
-
 end
