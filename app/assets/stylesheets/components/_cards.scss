@@ -76,3 +76,27 @@
 
   }
 }
+
+.challenge-card-show{
+  overflow: hidden;
+  height: 300px;
+  background: #B0D6C5;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  padding: 20px;
+  position:relative;
+}
+
+.challenge-card-show-button{
+  position:absolute;
+  bottom: 5%;
+  right:20%;
+}
+
+.challenge-card-show-detail-text{
+  color: white;
+}
