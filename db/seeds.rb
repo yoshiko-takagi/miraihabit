@@ -5,6 +5,14 @@ require "open-uri"
 # This is the assesment test content.
 # You can change the questions and relative answers here
 
+def generate_fake_avatar
+  url = 'https://this-person-does-not-exist.com/en'
+  doc = Nokogiri::HTML(URI.open(url).read)
+  src = doc.search('#avatar').first['src']
+  photo_url = "https://this-person-does-not-exist.com#{src}"
+end
+
+
 #questions seeds
 UserAnswer.destroy_all
 UserChallenge.destroy_all
@@ -181,11 +189,12 @@ challenge.save!
 
 puts "created challenges"
 
+# Users seed
 
+user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Apple')
+file = URI.open(generate_fake_avatar)
+user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
-
-
-user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Aplle')
 
 Question.find_each do |question|
   answer = question.answers.sample
@@ -201,8 +210,10 @@ end
 puts "created user challenge"
 
 repeater = User.find_by(email: 'repeater@test.com') || User.create!(email: 'repeater@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
-user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 03, 04))
+file = URI.open(generate_fake_avatar)
+repeater.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
+user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 03, 04))
 
 # user_challenge.mark_as_done(Date.new(2023, 03, 04))
 user_challenge.mark_as_done(Date.new(2023, 03, 05))
@@ -213,5 +224,8 @@ puts "created repeater and user challenge"
 # puts user_challenge.schedule
 
 new_user = User.find_by(email: 'new@test.com') || User.create!(email: 'new@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
+file = URI.open(generate_fake_avatar)
+new_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+
 
 puts "created new user"

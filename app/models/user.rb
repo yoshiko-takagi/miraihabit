@@ -20,6 +20,7 @@ class User < ApplicationRecord
   # filtered has many
   has_many :completed_challenges, through: :completed_user_challenges, source: :challenge
 
+  has_one_attached :photo
 
   def total_score
     user_challenges.sum(:score) + answer_challenges.sum(:max_score)
