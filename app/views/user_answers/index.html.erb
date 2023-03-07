@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <div class="score-card" >
-    <h2>Your Score: </h2>
+    <h2>Your Starting Score: </h2>
     <div class="score-round" >
       <h2><%= current_user.total_score %></h2>
     </div>
   </div>
-  <h2>Some suggested challenges for you:</h2>
+  <h2>Some suggestions for you:</h2>
   <% @suggested_challenges .each do |challenge| %>
     <%= render 'challenges/card', challenge: challenge %>
   <% end %>
