@@ -11,7 +11,6 @@
       <h3><%= challenge.name %></h3>
       <h4 class="text-center">Difficulty: <%= challenge.difficulty %></h4>
     </div>
-
     <div class="col-4">
       <%#= link_to dashboard_path do %>
         <%# <i class="fa-solid fa-plus fs-4"></i>  Add to your dashboard %>
@@ -24,6 +23,5 @@
           <%= render "user_challenges/user_challenge_create_form", challenge: challenge, user_challenge: @user_challenge %>
         <% end %>
       </div>
-
     </div>
   </div>

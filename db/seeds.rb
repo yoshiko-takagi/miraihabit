@@ -19,7 +19,7 @@ test = [
     answer2: "Buy grocery bags",
     challenge: {
       name: "Reusable Bags",
-      description: "Don't waste money and plastic, a reusable bag is great for grocery shopping.",
+      description: "An eco bag can fit perfectly folded up inside your bag and taken with you anywhere. Say no to plastic bags and use an eco bag instead!",
       category: "food",
       difficulty: 1,
       duration: 5,
@@ -33,7 +33,7 @@ test = [
   answer2: "Single use wet whipes",
   challenge: {
     name: "No Wet Whipes",
-    description: "Don't waste money and plastic for single wet whipes, a simple cloth can be easily washed with baking soda.",
+    description: "Save money and reduce your plastic consumption by simply converting to a cloth, which can be easily washed and reused.",
     category: "cleaning",
     difficulty: 2,
     duration: 3,
@@ -46,7 +46,7 @@ test = [
   answer2: "Get takeout",
   challenge: {
     name: "Make Your Lunch",
-    description: "Bring your own LunchBox to Work/School. According to a study done by MALUCA Lab, 44% of ocean plastics are linked to takeout food.",
+    description: "Bring your own LunchBox to work or school. About 44% of ocean plastics are linked to takeout food.",
     category: "food",
     difficulty: 3,
     duration: 3,
@@ -90,7 +90,7 @@ puts "created q and a"
 
 # All the other challenges seeds
 challenge = Challenge.new(
-  name: "Switch to a Bamboo Toothbrush",
+  name: "Bamboo Toothbrush",
   description: "Brush your teeth with a Bamboo toothbrush!Other than ecologic it's gentle on your gums.",
   category: "hygiene",
   difficulty: 1,
@@ -99,7 +99,7 @@ challenge = Challenge.new(
 challenge.save!
 
 challenge = Challenge.new(
-  name: "Eco Friendly Sponges",
+  name: "Eco Sponges",
   description: "Most sponges are made of either polyester, polyurethane or nylon, which are not recyclable and release microplastics into the water as they fall apart while scrubbing your dishes. You can switch to more eco-friendly sponges that are made of sea sponges, cellulose or coconut fiber.",
   category: "cleaning",
   difficulty: 2,
@@ -109,7 +109,7 @@ challenge.save!
 
 challenge = Challenge.new(
   name: "Detergent Sheets",
-  description: "Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great.",
+  description: "The average family uses around 13 bottles of laungry detergent a year. Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great.",
   category: "cleaning",
   difficulty: 2,
   duration: 3,
@@ -119,7 +119,7 @@ challenge.save!
 
 challenge = Challenge.new(
     name: "Ditch Coffee Cups",
-    description: "Although coffee cups are made of paper, the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which is a petroleum-based plastic.",
+    description: "Although coffee cups are made of paper, the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which is a petroleum-based plastic which take around 20-30 years to break down after being discarded.",
     category: "food",
     difficulty: 3,
     duration: 3,
@@ -131,7 +131,7 @@ challenge.save!
 
 pitch_challenge = Challenge.new(
   name: "Bar Shampoo",
-  description: "Bar shampoo are not only ecologic but healtier, lighter and take less space!",
+  description: "The average person uses around 11 bottles of shampoo a year. Bar shampoo is not only good for the environment, but it takes up less space in the shower and is more travel-friendly.",
   category: "hygiene",
   difficulty: 1,
   duration: 3,
