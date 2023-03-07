@@ -81,7 +81,7 @@ test.each do |item|
     difficulty: item[:challenge][:difficulty],
     duration: item[:challenge][:duration],
     max_score: item[:challenge][:max_score],
-    answer: not_eco_answer
+    answer: eco_answer
   )
   challenge.save!
 end

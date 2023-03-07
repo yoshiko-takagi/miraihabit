@@ -3,7 +3,7 @@ class UserAnswersController < ApplicationController
     @user_answer = policy_scope(UserAnswer)
     @user_challenge = UserChallenge.new
     # get only the challenges that are not already completed(from the test)
-    @suggested_challenges = Challenge.select { |c| current_user.challenges.exclude?(c) }
+    @suggested_challenges = Challenge.select { |c| current_user.answer_challenges.exclude?(c) }
   end
 
   def create
@@ -12,7 +12,6 @@ class UserAnswersController < ApplicationController
     authorize @user_answer
     if @user_answer.save
       # give the user some feedback
-      sleep(1)
       if @user_answer.question != Question.last
         # move to next question
         @next_question = Question.where("id > ?", @user_answer.answer.question.id).first
