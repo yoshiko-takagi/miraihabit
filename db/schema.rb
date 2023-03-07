@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_022757) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_06_072541) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,12 +55,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_022757) do
     t.integer "difficulty"
     t.string "name"
     t.string "description"
-    t.integer "score"
     t.integer "duration"
     t.bigint "answer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category"
+    t.integer "max_score", default: 0
+    t.string "image"
     t.index ["answer_id"], name: "index_challenges_on_answer_id"
   end
 
@@ -85,6 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_022757) do
     t.json "schedule", default: {}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "score", default: 0
     t.index ["challenge_id"], name: "index_user_challenges_on_challenge_id"
     t.index ["user_id"], name: "index_user_challenges_on_user_id"
   end
