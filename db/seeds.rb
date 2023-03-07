@@ -20,7 +20,8 @@ test = [
     answer2: "Buy grocery bags",
     challenge: {
       name: "Bring reusable Bags",
-      description: "An eco bag can fit perfectly folded up inside your bag and taken with you anywhere. Say no to plastic bags and use an eco bag instead!",
+      description_what: "An eco bag can fit perfectly folded up inside your bag and taken with you anywhere. Say no to plastic bags and use an eco bag instead!",
+      description_why: "🦋Here the why",
       category: "food",
       difficulty: 1,
       duration: 7,
@@ -35,7 +36,8 @@ test = [
   answer2: "Single use wet whipes",
   challenge: {
     name: "Use a washable cloth",
-    description: "Save money and reduce your plastic consumption by simply converting to a cloth, which can be easily washed and reused.",
+    description_what: "Save money and reduce your plastic consumption by simply converting to a cloth, which can be easily washed and reused.",
+    description_why: "🦋Here the why",
     category: "cleaning",
     difficulty: 2,
     duration: 7,
@@ -49,7 +51,8 @@ test = [
   answer2: "Get takeout",
   challenge: {
     name: "Make Your Lunch",
-    description: "Bring your own LunchBox to work or school. About 44% of ocean plastics are linked to takeout food.",
+    description_what: "Bring your own LunchBox to work or school. About 44% of ocean plastics are linked to takeout food.",
+    description_why: "🦋Here the why",
     category: "food",
     difficulty: 3,
     duration: 7,
@@ -63,7 +66,8 @@ test = [
   answer2: "From a regular grocery store",
   challenge: {
     name: "Buy plastic-Free Groceries",
-    description: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plstic-free grocery stores will make a huge difference!",
+    description_what: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plstic-free grocery stores will make a huge difference!",
+    description_why: "🦋Here the why",
     category: "food",
     difficulty: 3,
     duration: 7,
@@ -79,11 +83,11 @@ test.each do |item|
   eco_answer = Answer.create(question: question, content: item[:answer1])
   not_eco_answer = Answer.create(question: question, content: item[:answer2])
 
-
   # Create Associated challenges below:
   challenge = Challenge.new(
     name: item[:challenge][:name],
-    description: item[:challenge][:description],
+    description_what: item[:challenge][:description_what],
+    description_why: item[:challenge][:description_why],
     category: item[:challenge][:category],
     difficulty: item[:challenge][:difficulty],
     duration: item[:challenge][:duration],
@@ -93,6 +97,7 @@ test.each do |item|
   file = File.open(item[:challenge][:image_path])
   challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
   challenge.save!
+
 end
 
 puts "created q and a"
@@ -100,7 +105,8 @@ puts "created q and a"
 # All the other challenges seeds
 challenge = Challenge.new(
   name: "Use a Bamboo Toothbrush",
-  description: "Brush your teeth with a Bamboo toothbrush!Other than ecologic it's gentle on your gums.",
+  description_what: "Brush your teeth with a Bamboo toothbrush!Other than ecologic it's gentle on your gums.",
+  description_why: "🦋Here the why",
   category: "hygiene",
   difficulty: 1,
   duration: 7,
@@ -111,7 +117,8 @@ challenge.save!
 
 challenge = Challenge.new(
   name: "Use eco Sponges",
-  description: "Most sponges are made of either polyester, polyurethane or nylon, which are not recyclable and release microplastics into the water as they fall apart while scrubbing your dishes. You can switch to more eco-friendly sponges that are made of sea sponges, cellulose or coconut fiber.",
+  description_what: "Most sponges are made of either polyester, polyurethane or nylon, which are not recyclable and release microplastics into the water as they fall apart while scrubbing your dishes. You can switch to more eco-friendly sponges that are made of sea sponges, cellulose or coconut fiber.",
+  description_why: "🦋Here the why",
   category: "cleaning",
   difficulty: 2,
   duration: 7,
@@ -122,7 +129,8 @@ challenge.save!
 
 challenge = Challenge.new(
   name: "Use detergent Sheets",
-  description: "The average family uses around 13 bottles of laundry detergent a year. Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great.",
+  description_what: "The average family uses around 13 bottles of laundry detergent a year. Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great.",
+  description_why: "🦋Here the why",
   category: "cleaning",
   difficulty: 2,
   duration: 7,
@@ -134,7 +142,8 @@ challenge.save!
 
 challenge = Challenge.new(
     name: "Use dutch Coffee Cups",
-    description: "Although coffee cups are made of paper, the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which is a petroleum-based plastic which take around 20-30 years to break down after being discarded.",
+    description_what: "Although coffee cups are made of paper, the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which is a petroleum-based plastic which take around 20-30 years to break down after being discarded.",
+    description_why: "🦋Here the why",
     category: "food",
     difficulty: 3,
     duration: 7,
@@ -146,7 +155,8 @@ challenge.save!
 
 pitch_challenge = Challenge.new(
   name: "Use a bar Shampoo",
-  description: "The average person uses around 11 bottles of shampoo a year. Bar shampoo is not only good for the environment, but it takes up less space in the shower and is more travel-friendly.",
+  description_what: "The average person uses around 11 bottles of shampoo a year. Bar shampoo is not only good for the environment, but it takes up less space in the shower and is more travel-friendly.",
+  description_why: "🦋Here the why",
   category: "hygiene",
   difficulty: 1,
   duration: 7,
@@ -158,7 +168,8 @@ pitch_challenge.save!
 
 challenge = Challenge.new(
   name: "Use a powder Toothpaste",
-  description: "The average person uses about 6 tubes of toothpaste a year. If we all switched from tube toothpaste to powder or tablet toothpaste in paper packaging, it would make a huge difference!",
+  description_what: "The average person uses about 6 tubes of toothpaste a year. If we all switched from tube toothpaste to powder or tablet toothpaste in paper packaging, it would make a huge difference!",
+  description_why: "🦋Here the why",
   category: "hygiene",
   difficulty: 1,
   duration: 7,

@@ -3,6 +3,9 @@
     <h1>
       <%= @challenge.name %>
     </h1>
+     <% unless current_user.challenges.include?(@challenge) %>
+      <%= render "user_challenges/user_challenge_create_form", challenge: @challenge, user_challenge: @user_challenge %>
+    <% end %>
     <div>
       <% if @challenge.difficulty == 1 %>
         <h4>Difficulty: <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></h4>
@@ -14,13 +17,15 @@
       <h4><%= @challenge.max_score / 7%> points</h4>
     </div>
     <div>
-      <p  class="mt-4"><%= @challenge.description %></p>
+      <h2>Did you know?</h2>
+      <p  class="mt-4"><%= @challenge.description_what %></p>
     </div>
     <div>
       <%= cl_image_tag @challenge.photo.key  %>
     </div>
-    <% unless current_user.challenges.include?(@challenge) %>
-      <%= render "user_challenges/user_challenge_create_form", challenge: @challenge, user_challenge: @user_challenge %>
-    <% end %>
+     <div>
+      <h2>This is why!</h2>
+      <p  class="mt-4"><%= @challenge.description_why %></p>
+    </div>
   </div>
 </div>
