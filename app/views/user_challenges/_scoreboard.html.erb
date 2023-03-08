@@ -1,6 +1,6 @@
 <div data-controller="progress-bar">
 
-  <div class="card-dashboard">
+  <div class="card-dashboard my-3 py-3">
    <div class="card-dashboard-center">
     <h2 class="">Your Score:</i></h2>
       <h2 data-progress-bar-target="score"><%= @user.total_score %> <i class="fa-solid fa-leaf"></i></h2>
@@ -10,6 +10,7 @@
         <%= image_tag "/assets/badges/turtles/#{current_user.badges.last.name}.png", class:"card-dashboard-round-badge" %>
        </div>
       </div>
+
     <div class="stepper-wrapper">
       <div class="stepper-item" data-progress-bar-target="stepper" data-score="0">
         <div class="step-counter"><%= image_tag "/assets/badges/turtles/turtle1.png", style:"width: 180%" %></div>

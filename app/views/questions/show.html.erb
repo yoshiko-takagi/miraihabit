@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <div class="test-card">
     <div class="test-card-content">
-      <h2>Pick your current habit!</h2>
-      <%= @question.content  %>
+      <h2 class="text-decoration-underline mb-5">Pick your current habit</h2>
+      <h3 class="m-5"><%= @question.content  %></h3>
       <div class="answers-wrapper">
           <% @question.answers.each do |answer|  %>
             <%= render "form", answer: answer %>
