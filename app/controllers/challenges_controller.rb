@@ -1,21 +1,23 @@
 class ChallengesController < ApplicationController
 
   def index
-    @challenges = policy_scope(Challenge)
-    @user_challenges = UserChallenge.where(user: current_user, challenges: @challenges)
-    @active_user_challenges = @user_challenges.select { |user_challenge| user_challenge.active?}
-    @active_challenges = @active_user_challenges.map {|active_user_challenge| active_user_challenge.challenge}
-    @non_active_challenges = @challenges - @active_challenges
+    sql = <<~SQL
+      CURRENT_DATE >= DATE(user_challenges.created_at) + challenges.duration + 1 -- INACTIVE
+    SQL
 
-    if params.dig(:challenge, :category).present? && params.dig(:challenge, :difficulty).present?
-      @challenges = @non_active_challenges.where(category: params.dig(:challenge, :category).downcase, difficulty: params.dig(:challenge, :difficulty).to_i)
-    elsif params.dig(:challenge, :category).present?
-      @challenges = @non_active_challenges.where(category: params.dig(:challenge, :category).downcase)
-    elsif params.dig(:challenge, :difficulty).present?
-       @challenges = @non_active_challenges.where(difficulty: params.dig(:challenge, :difficulty).to_i)
-    else
-      @challenges = @non_active_challenges
+    challenges_never_done = Challenge.all - current_user.challenges
+    inactive_challenges = current_user.challenges.joins(:user_challenges).where(sql).distinct
+    # We reload the records in SQL (so that we can use .where):
+    @challenges = policy_scope(Challenge).where(id: challenges_never_done + inactive_challenges)
+
+    if params.dig(:challenge, :category).present?
+      @challenges = @challenges.where(category: params.dig(:challenge, :category).downcase)
     end
+
+    if params.dig(:challenge, :difficulty).present?
+      @challenges = @challenges.where(difficulty: params.dig(:challenge, :difficulty).to_i)
+    end
+
     # raise
     @user_challenge = UserChallenge.new
   end
