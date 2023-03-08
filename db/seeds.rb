@@ -27,8 +27,8 @@ test = [
     answer2: "Buy grocery bags",
     challenge: {
       name: "Bring Reusable Bags",
-      description_what: "A reusable grocery bag can replace plastic or paper bags at the store. It should be portable and be able to comfortably hold a load of groceries or other goods without ripping or collapsing. It can fit perfectly folded up inside your bag and taken with you anywhere.",
-      description_why: "You can save money, as some cities and states have started charging a fee for plastic bags. Also you can waste less food. Carry your own reusable bag and you’ll shop smarter as well; after all, if you only have room for a certain amount of groceries per bag, you could end up spending less.",
+      description_what: "An estimated 300 million plastic bags each year end up in the Atlantic Ocean.",
+      description_why: "Purchase a reusable bag that can be easily folded up and brought around in your backpack or bag. Saying no to plastic bags at shops, and using your own reusable bag will save you money, and save tons of plastic from going into the ocean.",
       category: "food",
       difficulty: 1,
       duration: 7,
@@ -43,8 +43,8 @@ test = [
   answer2: "Single use wet whipes",
   challenge: {
     name: "Use a Washable Cloth",
-    description_what: "A washable and reusable cleaning cloth is a zero-waste accessory and you can keep and reuse it for several years, saving you the use of hundreds of the traditional disposable cleaning cloths.",
-    description_why: "Save money and reduce your plastic consumption by simply converting to a cloth, which can be easily washed and reused.",
+    description_what: "Around 90% of wet wipes contain plastic, and break down into microplastics when flushed. The plastic fragments then find their way into rivers and seas and are eaten by marine animals.",
+    description_why: "Using a reusable washcloth for cleaning intead of disposable wipes is a simple and effective way of reducing your plastic footprint! You can also make your own all-purpose-cleaner by mixing 1/2 cup vinegar, 1/4 cup baking soda, and 4 to 8 cups hot water in a spray bottle.",
     category: "cleaning",
     difficulty: 2,
     duration: 7,
@@ -58,9 +58,8 @@ test = [
   answer2: "Get takeout",
   challenge: {
     name: "Make Your Lunch",
-    description_what: "Bring your own lunch box to work or school.",
-    description_why: "About 44% of ocean plastics are linked to takeout food, so bringing your own lunch to work or school is good way to reduce your plastic consumption.
-    Preparing your own lunch also cuts your calorie consumption by 20-35%. It can also save you an average of $4.70 per day.",
+    description_what: "About 44% of ocean plastics are linked to takeout food.",
+    description_why: "Bringing your own lunch to work or school can reduce your plastic footprint significantly. Make sure to bring your own utensils as well, including reusable metal straws.",
     category: "food",
     difficulty: 3,
     duration: 7,
@@ -74,8 +73,8 @@ test = [
   answer2: "From a regular grocery store",
   challenge: {
     name: "Buy Plastic-Free Groceries",
-    description_what: "Bulk stores or zero waste stores are a new eco-friendly revolution. They commit to offer the most sustainable food with the less packaging. ",
-    description_why: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plstic-free grocery stores will make a huge difference!",
+    description_what: "Bulk stores or zero waste stores are a new eco-friendly revolution. They commit to offer the most sustainable food with less packaging. ",
+    description_why: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plastic-free grocery stores will make a huge difference!",
     category: "food",
     difficulty: 3,
     duration: 7,
@@ -112,9 +111,8 @@ end
 # All the other challenges seeds
 challenge = Challenge.new(
   name: "Use a Bamboo Toothbrush",
-  description_what: "There are toothbrushes that have handles that are made out of an all-natural, biodegradable material known as bamboo and bristles that are made out of nylon or nylon4.",
-  description_why: "It's gentle on your gums and is just as effective at cleaning your teeth.
-  It is estimated that it could take 50, 60 or even 100 years for a plastic toothbrush to be broken down once it is tossed into the garbage. ",
+  description_what: "The average person discards their toothbrush every three to five months. In the United States around one billion plastic toothbrushes are thrown away every year, which creates 50 million pounds of waste annually. Since most toothbrushes are made from polypropylene plastic and nylon, they can take up to 500 years or more to decompose",
+  description_why: "You can switch to a more eco-friendly toothbrush that has a handle made of bamboo and bristles made of nylon or nylon 4, which are all biodegradable",
   category: "hygiene",
   difficulty: 1,
   duration: 7,
@@ -125,9 +123,8 @@ challenge.save!
 
 challenge = Challenge.new(
   name: "Use Eco Sponges",
-  description_what: "Most sponges are made of either polyester, polyurethane or nylon, which are not recyclable and release microplastics into the water as they fall apart while scrubbing your dishes. Zero waste, eco friendly sponges are the perfect alternative to sponges for dishes that are typically made from plastic.
-  You can switch to more eco-friendly sponges that are made of sea sponges, cellulose or coconut fiber.",
-  description_why: "Switching to a natural, eco dish sponge is far more eco-friendly than using a commercial, disposable one!",
+  description_what: "Most sponges are made of either polyester, polyurethane or nylon, which are not recyclable and release microplastics into the water as they fall apart while scrubbing your dishes. Zero waste, eco friendly sponges are the perfect alternative to sponges for dishes that are typically made from plastic.",
+  description_why: "You can switch to more eco-friendly sponges that are made of sea sponges, cellulose or coconut fiber. They are just as effective, and don't release any microplastics!",
   category: "cleaning",
   difficulty: 2,
   duration: 7,
@@ -138,8 +135,8 @@ challenge.save!
 
 challenge = Challenge.new(
   name: "Use Detergent Sheets",
-  description_what: "Plastic-free sheets of concentrated laundry detergent are made with ingredients that are held together by a resin and dissolvable paper.",
-  description_why: "The average family uses around 13 bottles of laundry detergent a year. Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great.",
+  description_what: "The average family uses around 13 bottles of laundry detergent a year.",
+  description_why: "Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great. Plastic-free sheets of concentrated laundry detergent are made with ingredients that are held together by a resin and dissolvable paper.",
   category: "cleaning",
   difficulty: 2,
   duration: 7,
@@ -151,8 +148,8 @@ challenge.save!
 
 challenge = Challenge.new(
     name: "Ditch Coffee Cups",
-    description_what: "Coffee cups are made of paper, but the lining on the inside to reinforce it is made of either plastic resin or polyethylene.",
-    description_why: "The material used for the lining can take around 20-30 years to break down after being discarded.",
+    description_what: "Coffee cups are made of paper, but the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which can take around 20-30 years to break down after being discarded.",
+    description_why: "Brew your own coffee at home, and bring it to work or school in a reusable coffee cup. You will save not only the planet, but your wallet too!",
     category: "food",
     difficulty: 3,
     duration: 7,
@@ -164,8 +161,8 @@ challenge.save!
 
 pitch_challenge = Challenge.new(
   name: "Use a Bar Shampoo",
-  description_what: "A shampoo bar is a solid version of your standard liquid option.",
-  description_why: "The average person uses around 11 bottles of shampoo a year. Bar shampoo is not only good for the environment, but it takes up less space in the shower and is more travel-friendly.",
+  description_what: "The average person uses around 11 bottles of shampoo a year.",
+  description_why: "There are tons of great brands that make a variety of shampoo bars to choose from. They are not only good for the environment, but they take up less space in the shower and are more travel-friendly.",
   category: "hygiene",
   difficulty: 1,
   duration: 7,
@@ -177,8 +174,8 @@ pitch_challenge.save!
 
 challenge = Challenge.new(
   name: "Use a Powder Toothpaste",
-  description_what: "Tooth powder is a mixture of a variety of ingredients that acts as an alternative to toothpaste as a cleaning agent.",
-  description_why: "The average person uses about 6 tubes of toothpaste a year. If we all switched from tube toothpaste to powder or tablet toothpaste in paper packaging, it would make a huge difference!y",
+  description_what: "The average person uses about 6 tubes of toothpaste a year. Since most toothpaste tubes are made of mixed materials such as plastic and aluminum, they are difficult to recycle and usually end up in landfills.",
+  description_why: "If we all switched from tube toothpaste to powder or tablet toothpaste in paper packaging, it would make a huge difference! You can even make own at home with custom ingredients.",
   category: "hygiene",
   difficulty: 1,
   duration: 7,
