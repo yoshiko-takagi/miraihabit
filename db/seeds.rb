@@ -16,6 +16,7 @@ end
 #questions seeds
 UserAnswer.destroy_all
 UserChallenge.destroy_all
+# User.destroy_all
 Question.destroy_all
 Challenge.destroy_all
 
