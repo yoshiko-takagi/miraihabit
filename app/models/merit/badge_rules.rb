@@ -41,6 +41,16 @@ module Merit
         user_answer.user.total_score >= 600 && user_answer.user.total_score < 800
       end
 
+      grant_on ['user_answers#create'], badge_id: 5, temporary: true do |user_answer|
+        user_answer.user.total_score >= 800 && user_answer.user.total_score < 1000
+      end
+
+      grant_on ['user_answers#create'], badge_id: 6, temporary: true do |user_answer|
+        user_answer.user.total_score >= 1000
+      end
+
+
+
       grant_on ['user_challenges#create', 'user_challenges#update'], badge_id: 1, temporary: true do |user_challenge|
         user_challenge.user.total_score < 200
       end
