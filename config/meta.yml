@@ -1,0 +1,5 @@
+meta_product_name: "miraihabit"
+meta_title: "Track and Reduce Your Plastic Footprint | miraihabit"
+meta_description: "Miraihabit is an app that helps you reduce your plastic footprint by completing daily challenges. Reduce your plastic consumption and choose new sustainable alternatives. Download it today!"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
