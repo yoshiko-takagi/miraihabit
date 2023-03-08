@@ -43,7 +43,7 @@
 }
 
 .card-dashboard {
-  height: 250px;
+  /* height: 250px;*/
   background: #B0D6C5;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   flex-direction: column;
@@ -53,6 +53,11 @@
   /* margin-right: 100px; */
   margin-bottom: 20px;
   /* border-radius: 15px;*/
+}
+
+.card-dashboard img {
+  height: 120px;
+  width: 120px;
 }
 
 .card-dashboard-score {
