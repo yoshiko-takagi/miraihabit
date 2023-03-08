@@ -37,6 +37,7 @@ class UserChallengesController < ApplicationController
     else
       render "challenges/index"
     end
+    # raise
   end
 
     # tracker
