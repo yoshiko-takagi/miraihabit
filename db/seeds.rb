@@ -41,7 +41,7 @@ test = [
 {
   question: "When cleaning I use...",
   answer1: "A washable cloth",
-  answer2: "Single use wet wipes",
+  answer2: "Single-use wet wipes",
   challenge: {
     name: "Use a Washable Cloth",
     description_what: "Around 90% of wet wipes contain plastic, and break down into microplastics when flushed. The plastic fragments then find their way into rivers and seas and are eaten by marine animals.",
@@ -69,18 +69,18 @@ test = [
   }
 },
 {
-  question: "I buy my groceries...",
-  answer1: "From a plastic-free bulk buying grocery store",
-  answer2: "From a regular grocery store",
+  question: "I wash my hair with...",
+  answer1: "Bar shampoo",
+  answer2: "Bottle shampoo",
   challenge: {
-    name: "Buy Plastic-Free Groceries",
-    description_what: "Bulk stores or zero waste stores are a new eco-friendly revolution. They commit to offer the most sustainable food with less packaging. ",
-    description_why: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plastic-free grocery stores will make a huge difference!",
-    category: "food",
-    difficulty: 3,
+    name: "Switch to Shampoo Bars",
+    description_what: "The average person uses around 11 bottles of shampoo a year.",
+    description_why: "There are tons of great brands that make a variety of shampoo bars to choose from. They are not only good for the environment, but they take up less space in the shower and are more travel-friendly.",
+    category: "hygiene",
+    difficulty: 2,
     duration: 1,
-    max_score: 280,
-    image_path: "app/assets/images/challenge/2589170_s.jpg"
+    max_score: 70,
+    image_path: "app/assets/images/challenge/24112916_s.jpg"
   }
 }
 ]
@@ -161,15 +161,15 @@ challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
 pitch_challenge = Challenge.new(
-  name: "Switch to Shampoo Bars",
-  description_what: "The average person uses around 11 bottles of shampoo a year.",
-  description_why: "There are tons of great brands that make a variety of shampoo bars to choose from. They are not only good for the environment, but they take up less space in the shower and are more travel-friendly.",
-  category: "hygiene",
-  difficulty: 2,
+  name: "Buy Plastic-Free Groceries",
+  description_what: "Bulk stores or zero waste stores are a new eco-friendly revolution. They commit to offer the most sustainable food with less packaging.",
+  description_why: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plastic-free grocery stores will make a huge difference!",
+  category: "food",
+  difficulty: 3,
   duration: 1,
-  max_score: 70
+  max_score: 280
 )
-file = File.open("app/assets/images/challenge/24112916_s.jpg")
+file = File.open("app/assets/images/challenge/2589170_s.jpg")
 pitch_challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 pitch_challenge.save!
 

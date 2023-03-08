@@ -1,15 +1,17 @@
 .btn-ghost {
-  color: #4A4A4A;
-  // border: 1px solid #4A4A4A;
+  color: white;
+  background-color: #93759c;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
+  font-size: 23px;
   opacity: 0.6;
   transition: opacity 0.3s ease;
   height: 164px;
+  width: 294px;
 }
 
 .btn-ghost:hover {
   opacity: 1;
-  background-color: #74dd93;
+  background-color: #a38aab;
 }
