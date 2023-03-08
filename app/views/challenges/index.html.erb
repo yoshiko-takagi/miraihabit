@@ -25,14 +25,14 @@
              %>
         </div>
         <div>
-          <h5>Difficulty</h5>
+          <h5>Environmental Impact</h5>
           <%= f.input :difficulty,
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
-            collection: [1, 2, 3],
+            collection: [["★☆☆", 1], ["★★☆", 2], ["★★★", 3]],
             label: false
              %>
         </div>

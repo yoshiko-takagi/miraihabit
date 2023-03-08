@@ -7,8 +7,14 @@
     <%# </div> %>
     <div class ="col-8 width-250">
       <h3><b><%= challenge.name %></b></h3>
-      <h4>Difficulty: <%= challenge.difficulty %></h4>
-      <h5><%= challenge.max_score %>  <i class="fa-solid fa-leaf"></i></h5>
+      <% if challenge.difficulty == 1 %>
+        <h4>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></h4>
+      <% elsif challenge.difficulty == 2 %>
+        <h4>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></h4>
+      <% elsif challenge.difficulty == 3 %>
+        <h4>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h4>
+      <% end %>
+      <h5><%= challenge.max_score / 7 %>  <i class="fa-solid fa-leaf"></i></h5>
     </div>
   </div>
   <div class="me-3">
