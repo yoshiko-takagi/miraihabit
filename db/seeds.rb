@@ -192,7 +192,7 @@ challenge.save!
 user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Apple')
 file = URI.open(generate_fake_avatar)
 user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
-
+user.add_badge(1)
 
 Question.find_each do |question|
   answer = question.answers.sample
@@ -208,6 +208,8 @@ end
 repeater = User.find_by(email: 'repeater@test.com') || User.create!(email: 'repeater@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
 file = URI.open(generate_fake_avatar)
 repeater.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+repeater.add_badge(2)
+
 
 user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 02, 28))
 
@@ -221,3 +223,4 @@ user_challenge.mark_as_done(Date.new(2023, 03, 02))
 new_user = User.find_by(email: 'new@test.com') || User.create!(email: 'new@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
 file = URI.open(generate_fake_avatar)
 new_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+new_user.add_badge(1)
