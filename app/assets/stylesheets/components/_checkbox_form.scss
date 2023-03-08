@@ -10,15 +10,15 @@
 .category-selector + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 0.7rem;
-  font-family: Tilt Warp;
+  font-size: 1.3rem;
   border-radius: 50rem;
-  padding: 0.1rem 0.5rem;
+  padding: 0.4rem 0.7rem;
   background-color: #D3E2BB;
   color: black;
   border: 1px solid #626E4E;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
+  font-weight: bold;
 }
 
 .category-selector:checked + label {
@@ -31,4 +31,8 @@
     display: none;
 
   }
+}
+
+.category-selector + label:hover {
+  background-color: #ebf0e3;
 }
