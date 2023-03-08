@@ -4,6 +4,7 @@ class UserAnswersController < ApplicationController
     @user_challenge = UserChallenge.new
     # get only the challenges that are not already completed(from the test)
     @suggested_challenges = Challenge.select { |c| current_user.answer_challenges.exclude?(c) }
+
   end
 
   def create

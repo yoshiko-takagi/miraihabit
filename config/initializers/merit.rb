@@ -19,32 +19,32 @@ end
 Rails.application.reloader.to_prepare do
   Merit::Badge.create!(
     id: 1,
-    name: "turtle-1",
+    name: "turtle1",
     description: "First step on the journey to clear turtle"
   )
   Merit::Badge.create!(
     id: 2,
-    name: "turtle-2",
+    name: "turtle2",
     description: "Second step on the journey to clear turtle"
   )
   Merit::Badge.create!(
     id: 3,
-    name: "turtle-3",
+    name: "turtle3",
     description: "Third step on the journey to clear turtle"
   )
   Merit::Badge.create!(
     id: 4,
-    name: "turtle-4",
+    name: "turtle4",
     description: "Fourth step on the journey to clear turtle"
   )
   Merit::Badge.create!(
     id: 5,
-    name: "turtle-5",
+    name: "turtle5",
     description: "Fifth step on the journey to clear turtle"
   )
   Merit::Badge.create!(
     id: 6,
-    name: "turtle-6",
+    name: "turtle6",
     description: "Last step on the journey to clear turtle"
   )
 end
