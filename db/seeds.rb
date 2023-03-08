@@ -108,6 +108,7 @@ test.each do |item|
 
 end
 
+puts "created q and a"
 
 # All the other challenges seeds
 challenge = Challenge.new(
@@ -186,7 +187,7 @@ file = File.open("app/assets/images/challenge/toothbrush-4493911_1280-1280x720.j
 challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
-
+puts "created challenges"
 # Users seed
 
 user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Apple')
@@ -224,3 +225,5 @@ new_user = User.find_by(email: 'new@test.com') || User.create!(email: 'new@test.
 file = URI.open(generate_fake_avatar)
 new_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 new_user.add_badge(1)
+
+puts "created users and repeater"
