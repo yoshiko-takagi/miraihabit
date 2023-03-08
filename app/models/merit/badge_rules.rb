@@ -22,16 +22,16 @@ module Merit
 
     def initialize
 
-      grant_on 'user_challenges#create', badge_id: 1, temporary: true do |user_challenge|
-        user_challenge.user.total_score < 200
-      end
+      # grant_on 'user_challenges#create', badge_id: 1, temporary: true do |user_challenge|
+      #   user_challenge.user.total_score < 200
+      # end
 
-      grant_on 'user_challenges#create', badge_id: 2, temporary: true do |user_challenge|
-        user_challenge.user.total_score < 1000
-      end
+      # grant_on 'user_challenges#dashboard', badge_id: 2, temporary: true do |user|
+      #   user.itself.total_score < 1000
+      # end
 
       # upper line working ☝️
-      # grant_on 'users/registrations#create', badge_id: 1, model_name: 'User'
+      grant_on 'users/registrations#create', badge_id: 1, model_name: 'User'
 
       # grant_on 'user_challenges#dashboard', badge_id: 1, to: :action_user, temporary: true do |user|
       # user.total_score < 200
