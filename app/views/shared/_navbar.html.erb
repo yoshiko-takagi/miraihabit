@@ -12,13 +12,12 @@
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to dashboard_path, class: "nav-link" do %>
-              <i class="fa-solid fa-house fs-4"></i>  Home
+              <i class="fa-solid fa-house fs-4"></i>  Dashboard
             <% end %>
           </li>
-
           <li class="nav-item">
             <%= link_to challenges_path, class: "nav-link" do %>
-              <i class="fa-solid fa-flag fs-4"></i>  Challenges
+              <i class="fa-solid fa-flag fs-4"></i>  All Challenges
             <% end %>
           </li>
           <li class="nav-item dropdown">

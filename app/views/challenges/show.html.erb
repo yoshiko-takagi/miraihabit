@@ -1,9 +1,9 @@
 <div class="container">
   <div class="challenge-card-show">
     <h1 class="m-3">
-      <%= @challenge.name %>
+      <b><%= @challenge.name %></b>
     </h1 class="m-3">
-     <% unless current_user.challenges.include?(@challenge) %>
+    <% unless current_user.challenges.include?(@challenge) %>
       <%= render "user_challenges/user_challenge_create_form", challenge: @challenge, user_challenge: @user_challenge %>
     <% end %>
     <div class="m-4">
@@ -19,11 +19,11 @@
     <div class="d-flex justify-content-between">
       <div class="m-3" >
         <div class="mt-3">
-          <h3>Did you know?</h3>
+          <h3><b>Did you know?</b></h3>
           <p  class="mt-3"><%= @challenge.description_what %></p>
         </div>
         <div class="mt-3">
-          <h3>This is why!</h3>
+          <h3><b>What you can do</b></h3>
           <p  class="mt-3"><%= @challenge.description_why %></p>
         </div>
       </div>
