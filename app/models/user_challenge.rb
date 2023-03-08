@@ -30,6 +30,12 @@ class UserChallenge < ApplicationRecord
     end
   end
 
+  def active?
+    start = created_at.to_date + 1
+    expire  = start + challenge.duration
+    expire > Date.today
+  end
+
   def set_score
     number = schedule.count { |_date, completed| completed }
     self.score = (number.to_f / challenge.duration * challenge.max_score).round

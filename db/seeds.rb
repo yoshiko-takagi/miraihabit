@@ -211,10 +211,10 @@ repeater = User.find_by(email: 'repeater@test.com') || User.create!(email: 'repe
 file = URI.open(generate_fake_avatar)
 repeater.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
-user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 03, 04))
+user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 02, 28))
 
 # user_challenge.mark_as_done(Date.new(2023, 03, 04))
-user_challenge.mark_as_done(Date.new(2023, 03, 05))
+user_challenge.mark_as_done(Date.new(2023, 03, 02))
 
 
 
