@@ -21,6 +21,31 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
+      grant_on 'users/registrations#create', badge_id: 1, model_name: 'User'
+
+      grant_on 'user_challenges#dashboard', badge_id: 1, to: :action_user, temporary: true do |user|
+      user.total_score < 200
+      end
+
+      grant_on 'user_challenges#dashboard', badge_id: 2, to: :action_user, temporary: true do |user|
+        user.total_score < 400 || user.total_score > 200
+      end
+
+      grant_on 'user_challenges#dashboard', badge_id: 3, to: :action_user, temporary: true do |user|
+        user.total_score < 600 || user.total_score > 400
+      end
+
+      grant_on 'user_challenges#dashboard', badge_id: 4, to: :action_user, temporary: true do |user|
+        user.total_score < 800 || user.total_score > 600
+      end
+
+      grant_on 'user_challenges#dashboard', badge_id: 5, to: :action_user, temporary: true do |user|
+        user.total_score < 1000 || user.total_score > 800
+      end
+
+      grant_on 'user_challenges#dashboard', badge_id: 6, to: :action_user, temporary: true do |user|
+        user.total_score <= 1000
+      end
       # If it creates user, grant badge
       # Should be "current_user" after registration for badge to be granted.
       # Find badge by badge_id, badge_id takes presidence over badge

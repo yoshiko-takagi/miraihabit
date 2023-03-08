@@ -16,6 +16,42 @@ Merit.setup do |config|
   # config.current_user_method = 'current_user'
 end
 
+Rails.application.reloader.to_prepare do
+  Merit::Badge.create!(
+    id: 1,
+    name: "turtle-1",
+    description: "First step on the journey to clear turtle"
+  )
+  Merit::Badge.create!(
+    id: 2,
+    name: "turtle-2",
+    description: "Second step on the journey to clear turtle"
+  )
+  Merit::Badge.create!(
+    id: 3,
+    name: "turtle-3",
+    description: "Third step on the journey to clear turtle"
+  )
+  Merit::Badge.create!(
+    id: 4,
+    name: "turtle-4",
+    description: "Fourth step on the journey to clear turtle"
+  )
+  Merit::Badge.create!(
+    id: 5,
+    name: "turtle-5",
+    description: "Fifth step on the journey to clear turtle"
+  )
+  Merit::Badge.create!(
+    id: 6,
+    name: "turtle-6",
+    description: "Last step on the journey to clear turtle"
+  )
+end
+
+
+
+
 # Create application badges (uses https://github.com/norman/ambry)
 # Rails.application.reloader.to_prepare do
 #   badge_id = 0
