@@ -1,11 +1,12 @@
-  <div class="score-card" >
-    <h2>Your Starting Score: </h2>
-          <h2><%= current_user.total_score %> <i class="fa-solid fa-leaf"></i></h2>
-    <div class="score-round" >
-      <%= image_tag "/assets/badges/turtles/#{current_user.badges.last.name}.png", class:"score-round-badge" %>
-    </div>
+<div class="score-card" >
+  <h2>Your Starting Score: </h2>
+  <h2><%= current_user.total_score %> <i class="fa-solid fa-leaf"></i></h2>
+  <div class="score-round" >
+    <%= image_tag "/assets/badges/turtles/#{current_user.badges.last.name}.png", class:"score-round-badge" %>
   </div>
-  <h2>Some suggestions for you:</h2>
-  <% @suggested_challenges .each do |challenge| %>
-    <%= render 'challenges/card', challenge: challenge %>
-  <% end %>
+</div>
+<h2>Suggested Challenges:</h2>
+<h5>We've hand-picked some challenges for you based on your assessment.</h5>
+<% @suggested_challenges .each do |challenge| %>
+  <%= render 'challenges/card', challenge: challenge %>
+<% end %>
