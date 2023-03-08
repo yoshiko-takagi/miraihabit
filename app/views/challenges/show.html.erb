@@ -8,13 +8,20 @@
     <% end %>
     <div class="m-4">
       <% if @challenge.difficulty == 1 %>
-        <h4>Difficulty: <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></h4>
+        <h4>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></h4>
       <% elsif @challenge.difficulty == 2 %>
-        <h4>Difficulty: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></h4>
+        <h4>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></h4>
       <% elsif @challenge.difficulty == 3 %>
-        <h4>Difficulty: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h4>
+        <h4>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h4>
       <% end %>
-      <h4><%= @challenge.max_score / 7%> points</h4>
+
+      <% if  @challenge.duration == 1%>
+        <h4><%= @challenge.duration %> day</h4>
+      <% else %>
+        <h4><%= @challenge.duration %> days</h4>
+      <% end %>
+
+      <h4><%= @challenge.max_score / 7%> <i class="fa-solid fa-leaf"></i></h4>
     </div>
     <div class="d-flex justify-content-between">
       <div class="m-3" >
