@@ -44,7 +44,7 @@
   </div>
 </div>
 <% @challenges.each do |challenge| %>
-  <% unless current_user.challenges.include?(challenge) %>
+  <%# unless current_user.challenges.include?(challenge) %>
     <%= render 'challenges/card', challenge: challenge %>
-  <% end %>
+  <%# end %>
 <% end %>
