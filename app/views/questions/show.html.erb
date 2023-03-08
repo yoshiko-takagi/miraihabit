@@ -1,14 +1,15 @@
 <div class="container-fluid">
   <div class="test-card">
     <div class="test-card-content">
-      <h2 class="text-decoration-underline mb-5">Pick your current habit</h2>
-      <h3 class="m-5"><%= @question.content  %></h3>
+      <h2><b>Select your current habits</b></h2>
+      <hr>
+      <h5><%= @question.content  %></h5>
       <div class="answers-wrapper">
-          <% @question.answers.each do |answer|  %>
-            <%= render "form", answer: answer %>
-          <% end %>
+        <% @question.answers.each do |answer|  %>
+          <%= render "form", answer: answer %>
+        <% end %>
       </div>
-      </div>
-      <%# <%= render "footer" %>
+    </div>
+    <%# <%= render "footer" %>
   </div>
 </div>
