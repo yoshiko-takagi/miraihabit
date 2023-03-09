@@ -1,5 +1,5 @@
 <div class="challenge-card-small justify-content-between">
-  <%= image_tag "#{challenge.category}.png"%>
+  <%= image_tag "#{challenge.category}.png" %>
   <div class="row justify-content-between">
     <%# <div class ="col-4 d-flex flex-column"> %>
     <%# <div class="challenge-card-small-infos" style="justify-content-between text-align: center"> %>
@@ -8,13 +8,20 @@
     <div class ="col-8 width-250 margin-spacer">
       <h3><b><%= challenge.name %></b></h3>
       <% if challenge.difficulty == 1 %>
-        <h4>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></h4>
+        <h5>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></h5>
       <% elsif challenge.difficulty == 2 %>
-        <h4>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></h4>
+        <h5>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></h5>
       <% elsif challenge.difficulty == 3 %>
-        <h4>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h4>
+        <h5>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h5>
       <% end %>
       <h5><%= challenge.max_score / 7 %>  <i class="fa-solid fa-leaf"></i></h5>
+      <% if  challenge.duration == 1%>
+        <h5><b>Duration: </b><%= challenge.duration %> day</h5>
+        <!--<h5><%= challenge.duration %> day</h5>-->
+      <% else %>
+        <h5><b>Duration:  </b><%= challenge.duration %> days</h5>
+        <!--<h5><%= challenge.duration %> days</h5>-->
+      <% end %>
     </div>
   </div>
   <div class="me-3">

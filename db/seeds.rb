@@ -33,7 +33,7 @@ test = [
       category: "food",
       difficulty: 2,
       duration: 7,
-      max_score: 70,
+      max_score: 140,
       image_path: "app/assets/images/challenge/23208754_s.jpg"
     }
   },
@@ -47,7 +47,7 @@ test = [
     description_what: "Around 90% of wet wipes contain plastic, and break down into microplastics when flushed. The plastic fragments then find their way into rivers and seas and are eaten by marine animals.",
     description_why: "Using a reusable washcloth for cleaning intead of disposable wipes is a simple and effective way of reducing your plastic footprint! You can also make your own all-purpose-cleaner by mixing 1/2 cup vinegar, 1/4 cup baking soda, and 4 to 8 cups hot water in a spray bottle.",
     category: "cleaning",
-    difficulty: 1,
+    difficulty: 2,
     duration: 7,
     max_score: 140,
     image_path: "app/assets/images/challenge/23129534_s.jpg"
@@ -77,7 +77,7 @@ test = [
     description_what: "The average person uses around 11 bottles of shampoo a year.",
     description_why: "There are tons of great brands that make a variety of shampoo bars to choose from. They are not only good for the environment, but they take up less space in the shower and are more travel-friendly.",
     category: "hygiene",
-    difficulty: 2,
+    difficulty: 1,
     duration: 1,
     max_score: 70,
     image_path: "app/assets/images/challenge/24112916_s.jpg"
@@ -128,9 +128,9 @@ challenge = Challenge.new(
   description_what: "Most sponges are made of either polyester, polyurethane or nylon, which are not recyclable and release microplastics into the water as they fall apart while scrubbing your dishes. Zero waste, eco friendly sponges are the perfect alternative to sponges for dishes that are typically made from plastic.",
   description_why: "You can switch to more eco-friendly sponges that are made of sea sponges, cellulose or coconut fiber. They are just as effective, and don't release any microplastics!",
   category: "cleaning",
-  difficulty: 2,
+  difficulty: 1,
   duration: 1,
-  max_score: 140)
+  max_score: 70)
 file = File.open("app/assets/images/challenge/4728804_s.jpg")
 challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
@@ -140,9 +140,9 @@ challenge = Challenge.new(
   description_what: "The average family uses around 13 bottles of laundry detergent a year.",
   description_why: "Simply switching from bottled detergent to detergent sheets or pods can make a huge difference, and they work just as great. Plastic-free sheets of concentrated laundry detergent are made with ingredients that are held together by a resin and dissolvable paper.",
   category: "cleaning",
-  difficulty: 2,
+  difficulty: 1,
   duration: 1,
-  max_score: 140
+  max_score: 70
  )
 file = File.open("app/assets/images/challenge/grove-colaundry-detergent-sheets-ecomm-ft.jpeg")
 challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -153,9 +153,9 @@ pitch_challenge = Challenge.new(
     description_what: "Coffee cups are made of paper, but the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which can take around 20-30 years to break down after being discarded.",
     description_why: "Brew your own coffee at home, and bring it to work or school in a reusable coffee cup. You will save not only the planet, but your wallet too!",
     category: "food",
-    difficulty: 1,
+    difficulty: 2,
     duration: 7,
-    max_score: 280
+    max_score: 140
   )
 file = File.open("app/assets/images/challenge/25943428_s.jpg")
 pitch_challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
@@ -212,10 +212,10 @@ repeater = User.find_by(email: 'repeater@test.com') || User.create!(email: 'repe
 repeater.add_badge(2)
 
 
-user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 03, 02))
+user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 03, 03))
 
 # user_challenge.mark_as_done(Date.new(2023, 03, 04))
-user_challenge.mark_as_done(Date.new(2023, 03, 03))
+user_challenge.mark_as_done(Date.new(2023, 03, 07))
 user_challenge.mark_as_done(Date.new(2023, 03, 04))
 user_challenge.mark_as_done(Date.new(2023, 03, 05))
 user_challenge.mark_as_done(Date.new(2023, 03, 06))
