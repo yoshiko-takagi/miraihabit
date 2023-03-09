@@ -1,34 +1,36 @@
 <div class="challenge-card-small justify-content-between">
-  <%= image_tag "#{challenge.category}.png" %>
-  <div class="row justify-content-between">
-    <%# <div class ="col-4 d-flex flex-column"> %>
-    <%# <div class="challenge-card-small-infos" style="justify-content-between text-align: center"> %>
-    <%# </div> %>
-    <%# </div> %>
-    <div class ="col-8 width-250 margin-spacer">
-      <h3><b><%= challenge.name %></b></h3>
-      <% if challenge.difficulty == 1 %>
-        <h5>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></h5>
-      <% elsif challenge.difficulty == 2 %>
-        <h5>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></h5>
-      <% elsif challenge.difficulty == 3 %>
-        <h5>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h5>
-      <% end %>
-      <h5><%= challenge.max_score / 7 %>  <i class="fa-solid fa-leaf"></i></h5>
-      <% if  challenge.duration == 1%>
-        <h5><b>Duration: </b><%= challenge.duration %> day</h5>
-        <!--<h5><%= challenge.duration %> day</h5>-->
-      <% else %>
-        <h5><b>Duration:  </b><%= challenge.duration %> days</h5>
-        <!--<h5><%= challenge.duration %> days</h5>-->
-      <% end %>
+
+  <div class="d-flex justify-content-start" >
+    <%= image_tag "#{challenge.category}.png", class: "d-flex align-items-center justify-content-center" %>
+    <div class="row justify-content-start">
+      <%# <div class ="col-4 d-flex flex-column"> %>
+      <%# <div class="challenge-card-small-infos" style="justify-content-between text-align: center"> %>
+      <%# </div> %>
+      <%# </div> %>
+      <div class ="col-8 width-450">
+        <h3><b><%= challenge.name %></b></h3>
+        <% if challenge.difficulty == 1 %>
+          <h5>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></h5>
+        <% elsif challenge.difficulty == 2 %>
+          <h5>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></h5>
+        <% elsif challenge.difficulty == 3 %>
+          <h5>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h5>
+        <% end %>
+        <h5><%= challenge.max_score / 7 %>  <i class="fa-solid fa-leaf"></i></h5>
+        <% if  challenge.duration == 1%>
+          <h5><b>Duration: </b><%= challenge.duration %> day</h5>
+          <!--<h5><%= challenge.duration %> day</h5>-->
+        <% else %>
+          <h5><b>Duration:  </b><%= challenge.duration %> days</h5>
+          <!--<h5><%= challenge.duration %> days</h5>-->
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class="me-3">
-    <%#= link_to dashboard_path do %>
-      <%# <i class="fa-solid fa-plus fs-4"></i>  Add to your dashboard %>
-      <%# end %>
-      <%= link_to challenge_path(challenge), class: "btn btn-danger challenge-card-show-detail-text w-100 mb-2 text-white" do %>
+  <div class="d-flex justify-content-end">
+    <div class="me-3">
+      <%= link_to challenge_path(challenge), class: "btn btn-secondary w-100 mb-2 text-white" do %>
+
         <i class="fa-solid fa-info"></i><b>  Info</b>
       <% end %>
       <%# unless current_user.challenges.include?(challenge) %>
@@ -36,3 +38,4 @@
       <%= render "user_challenges/user_challenge_create_form", challenge: challenge, user_challenge: @user_challenge %>
     </div>
   </div>
+</div>

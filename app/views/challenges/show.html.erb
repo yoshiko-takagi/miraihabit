@@ -3,6 +3,7 @@
     <%= link_to '<< Back', challenges_path, class: "btn btn-outline-info mt-2 text-decoration-none" %>
   </div>
   <div class="challenge-card-show">
+
     <div class="d-flex justify-content-center align-items-center">
       <h1 class="m-3">
         <b><%= @challenge.name %></b>
@@ -21,6 +22,7 @@
           <h4><b>Environmental Impact: </b><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></h4>
         <% elsif @challenge.difficulty == 3 %>
           <h4><b>Environmental Impact: </b><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h4>
+
         <% end %>
         <div class="d-flex m-1 justify-content-center">
           <% if  @challenge.duration == 1%>
@@ -50,5 +52,5 @@
         <%= cl_image_tag @challenge.photo.key, width: "300", class:"img-border" %>
       </div>
     </div>
-  </div>
+</div>
 </div>
