@@ -39,7 +39,7 @@ test = [
   },
 #2
 {
-  question: "When cleaning I use...",
+  question: "When cleaning my home I use...",
   answer1: "A washable cloth",
   answer2: "Single-use wet wipes",
   challenge: {
