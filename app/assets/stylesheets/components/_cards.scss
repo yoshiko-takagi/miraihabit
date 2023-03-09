@@ -1,6 +1,7 @@
 .challenge-card-small {
   overflow: hidden;
   height: 170px;
+
   // width: 40%;
   background: #B0D6C5;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -48,10 +49,24 @@
   font-size: 20px;
 }
 
+
 .challenge-card-flex{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+}
+
+
+.challenges-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.challenge-card-small .margin-spacer {
+  margin-right: 94px;
 }
 
 
@@ -115,6 +130,12 @@
   margin-right: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.challenge-card-show .icon-category{
+height: 150px;
+width: 150px;
+
 }
 
 .width-250{
