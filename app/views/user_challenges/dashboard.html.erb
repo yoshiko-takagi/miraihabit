@@ -1,5 +1,25 @@
-<%# Scoreboard %>
-<%= render "scoreboard" %>
-<%# Calendar %>
-<hr>
-<%= render "calendar" %>
+<div class="container-fluid">
+<div class="dashboard_container" data-controller="show-details">
+  <div class="scoreboard">
+    <%= render "scoreboard" %>
+  </div>
+  <div class="checker">
+    <h2 class="my-2">Today's Challenges</h2>
+    <h2><span class="badge bg-success"><%= Date.current.strftime("%b %d, %Y") %></span></h2>
+    <%# <i class="fa-solid fa-square-check fs-4"></i> %>
+    <div class="card-product-infos">
+      <% @user_challenges.each do |user_challenge| %>
+        <%= render "user_challenges/form", user_challenge: user_challenge %>
+      <% end %>
+    </div>
+
+  </div>
+  <div class="details" data-show-details-target="details">
+      <%# <%= render "details", challenge: Challenge.last  %>
+  </div>
+  <div class="calendar">
+    <%= render "calendar" %>
+  </div>
+
+</div>
+</div>

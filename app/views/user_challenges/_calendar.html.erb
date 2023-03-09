@@ -1,22 +1,8 @@
 
-<div class="container">
-  <h1 class="my-3">My Challenge Tracker</h1>
-  <h1><span class="badge bg-success"><%= Date.current.strftime("%b %d, %Y") %></span></h1>
-
-  <div >
-    <%# <i class="fa-solid fa-square-check fs-4"></i> %>
-    <div class="card-product-infos">
-      <% @user_challenges.each do |user_challenge| %>
-      <%= render "user_challenges/form", user_challenge: user_challenge %>
-    <% end %>
-    </div>
-  </div>
-
-  <div class="mt-5">
     <%= month_calendar do |date| %>
       <%= date.strftime("%m/%d")%>
       <% @schedule[date.to_s]&.each do |user_challenge| %>
-        <div class="user-challenge">
+        <div class="user-challenge" data-challenge-id=<%= user_challenge.challenge.id %> data-action="click->show-details#select" >
           <% if user_challenge.schedule[date.to_s] == true %>  <!-- We will add some style to the meeting class later so let's add it now -->
             <p class="badge bg-success text-light"><%= user_challenge.challenge.name %></p>
           <% else %>
@@ -26,4 +12,3 @@
       <% end %>
     <% end %>
   </div>
-</div>

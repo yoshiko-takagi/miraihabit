@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   # add tracker page
   get "/dashboard", to: "user_challenges#dashboard"
 
+  get "/dashboard/:id", to: "challenges#select"
+
   resources :user_challenges, only: [:update]
   resources :user_answers, only: [:index]
   resources :questions, only: [:show] do

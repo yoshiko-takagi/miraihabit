@@ -1,0 +1,5 @@
+     <% @user_challenges.each do |user_challenge| %>
+        <% if user_challenge.active? %>
+          <%= render 'challenges/card_nonplus', challenge: user_challenge.challenge %>
+        <% end %>
+      <% end %>

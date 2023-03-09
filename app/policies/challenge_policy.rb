@@ -8,4 +8,8 @@ class ChallengePolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def select?
+    true
+  end
 end
