@@ -1,6 +1,6 @@
 <div class="container">
   <div class="challenge-show-backbtn">
-      <%= link_to '<< Back', challenges_path, class: "btn btn-outline-info mt-2 text-decoration-none" %>
+    <%= link_to '<< Back', challenges_path, class: "btn btn-outline-info mt-2 text-decoration-none" %>
   </div>
   <div class="challenge-card-show">
     <% unless current_user.challenges.include?(@challenge) %>
@@ -8,6 +8,7 @@
     <% end %>
     <h1 class="m-3">
       <b><%= @challenge.name %></b>
+      <hr>
     </h1 class="m-3">
     <div class="m-4">
       <% if @challenge.difficulty == 1 %>
@@ -28,6 +29,7 @@
       </div>
       <h4><%= @challenge.max_score / 7%> <i class="fa-solid fa-leaf"></i></h4>
     </div>
+    <hr>
     <div class="d-flex justify-content-between align-items-center">
       <div class="m-3" >
         <div class="mt-3">
