@@ -3,4 +3,8 @@ class Answer < ApplicationRecord
   has_one :challenge, dependent: :destroy
   has_many :user_answers, dependent: :destroy
   validates :content, presence: true
+
+  # def max_score
+  #   self.challenge.max_score
+  # end
 end
