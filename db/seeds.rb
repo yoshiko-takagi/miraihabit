@@ -148,7 +148,7 @@ file = File.open("app/assets/images/challenge/grove-colaundry-detergent-sheets-e
 challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
-challenge = Challenge.new(
+pitch_challenge = Challenge.new(
     name: "Ditch Coffee Cups",
     description_what: "Coffee cups are made of paper, but the lining on the inside to reinforce it is made of either plastic resin or polyethylene, which can take around 20-30 years to break down after being discarded.",
     description_why: "Brew your own coffee at home, and bring it to work or school in a reusable coffee cup. You will save not only the planet, but your wallet too!",
@@ -158,10 +158,10 @@ challenge = Challenge.new(
     max_score: 280
   )
 file = File.open("app/assets/images/challenge/25943428_s.jpg")
-challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-challenge.save!
+pitch_challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+pitch_challenge.save!
 
-pitch_challenge = Challenge.new(
+challenge = Challenge.new(
   name: "Buy Plastic-Free Groceries",
   description_what: "Bulk stores or zero waste stores are a new eco-friendly revolution. They commit to offer the most sustainable food with less packaging.",
   description_why: "Grocery stores use tons of plastic, sometimes wrapping things individually that don't even need to be wrapped. Buying in bulk with your own reusable jars, containers, and bags, and supporting plastic-free grocery stores will make a huge difference!",
@@ -171,8 +171,8 @@ pitch_challenge = Challenge.new(
   max_score: 280
 )
 file = File.open("app/assets/images/challenge/2589170_s.jpg")
-pitch_challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-pitch_challenge.save!
+challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+challenge.save!
 
 challenge = Challenge.new(
   name: "Switch to Powder Toothpaste",
@@ -212,12 +212,13 @@ repeater.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 repeater.add_badge(2)
 
 
-user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 02, 28))
+user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 03, 02))
 
 # user_challenge.mark_as_done(Date.new(2023, 03, 04))
-user_challenge.mark_as_done(Date.new(2023, 03, 02))
-
-
+user_challenge.mark_as_done(Date.new(2023, 03, 03))
+user_challenge.mark_as_done(Date.new(2023, 03, 04))
+user_challenge.mark_as_done(Date.new(2023, 03, 05))
+user_challenge.mark_as_done(Date.new(2023, 03, 06))
 
 # puts user_challenge.schedule
 
