@@ -1,6 +1,14 @@
 <%# <div class="banner" style="background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_path"139606_s.jpg"%>
 <div id="home-banner">
   <h2>Start Your Plastic-free Journey!</h2>
+  <p>miraihabit helps you reduce your plastic footprint by completing daily challenges.
+    <br>
+    Reduce your plastic consumption and choose new sustainable alternatives!</p>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <%# <button class="btn btn-info my-3" type="button">Sign up now</button> %>
+    <%= link_to "Go to an Assessment", question_path(@first_question), id: "btn-home-cta" %>
+    <%# class: "btn btn-light-gray my-3" %>
+  </div>
 </div>
 </div>
 <div id="home-container">
@@ -12,24 +20,24 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
-        <img src=<%= image_path "Carousel_1.PNG" %> class="d-block w-100 custom-carousel" alt="...">
+        <img src=<%= image_path "carousel_1" %> class="d-block w-100 custom-carousel" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h3 class="">Step 1</h3>
-          <p class="">Take a quick online <strong>assessment</strong> to measure your plastic footprint.</p>
+          <h4 class="">Take a quick online assessment to get a starting score</h4>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
-        <img src=<%= image_path "Carousel_2.PNG" %> class="d-block w-100 custom-carousel" alt="...">
+        <img src=<%= image_path "carousel_2" %> class="d-block w-100 custom-carousel" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h3 class="">Step 2</h3>
-          <h4 class="">Choose your <strong>challenges</strong> and change your daily habits.</h4>
+          <h4 class="">Choose & complete your daily challenges with new sustainable alternatives</h4>
         </div>
       </div>
       <div class="carousel-item">
-        <img src=<%= image_path "Carousel_3.PNG" %> class="d-block w-100 custom-carousel" alt="...">
+        <img src=<%= image_path "carousel_3" %> class="d-block w-100 custom-carousel" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <h3 class="">Step 3</h3>
-          <h4 class=""><strong>Track</strong> and <strong>Reduce</strong> your plastic footprint based on your personalized goals!</h4>
+          <h4 class="">Track and Reduce your plastic footprint to save your sea turtle from plastic waste!</h4>
         </div>
       </div>
     </div>
@@ -42,9 +50,11 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
   <div class="d-grid gap-2 col-6 mx-auto">
     <%# <button class="btn btn-info my-3" type="button">Sign up now</button> %>
     <%= link_to "Start Your Assessment", question_path(@first_question), id: "btn-home-cta" %>
     <%# class: "btn btn-light-gray my-3" %>
   </div>
+
 </div>
