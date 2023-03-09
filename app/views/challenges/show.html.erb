@@ -10,7 +10,7 @@
       <b><%= @challenge.name %></b>
       <hr>
     </h1 class="m-3">
-    <div class="m-4">
+    <div class="m-1">
       <% if @challenge.difficulty == 1 %>
         <h4><b>Environmental Impact: </b><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></h4>
       <% elsif @challenge.difficulty == 2 %>
@@ -18,7 +18,7 @@
       <% elsif @challenge.difficulty == 3 %>
         <h4><b>Environmental Impact: </b><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h4>
       <% end %>
-      <div class="d-flex m-4 justify-content-center">
+      <div class="d-flex m-1 justify-content-center">
         <% if  @challenge.duration == 1%>
           <h4><b>Duration: </b></h4>
           <h4><%= @challenge.duration %> day</h4>
