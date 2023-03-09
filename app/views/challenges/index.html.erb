@@ -7,6 +7,7 @@
     <h1>Browse All Challenges</h1>
     <p>Filter through all of our challenges, and choose which ones you'd like to try to start your plastic-free journey!</p>
   </div>
+  <hr>
   <div class="d-flex justify-content-center">
     <%= simple_form_for :challenge, url: challenges_path, method: :get, data: { controller: 'autosave' } do |f| %>
       <div class="d-flex mt-3">
@@ -25,26 +26,27 @@
              %>
         </div>
         <div>
-          <h5>Difficulty</h5>
+          <h5>Environmental Impact</h5>
           <%= f.input :difficulty,
             as: :radio_buttons,
             collection_wrapper_tag: 'div',
             collection_wrapper_class: 'category-wrapper',
             item_wrapper_class: 'category-item',
             input_html: {class: 'category-selector'},
-            collection: [1, 2, 3],
+            collection: [["★☆☆", 1], ["★★☆", 2], ["★★★", 3]],
             label: false
              %>
         </div>
         <div class="d-flex justify-content-center align-items-center font-weight-bold">
-          <button class="btn btn-info btn-lg rounded-pill" type="submit"><b>Search</b></button>
+          <button class="btn btn-success btn-lg rounded-pill text-white" style="margin-left: 30px;" type="submit"><b>Search</b></button>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+<hr>
 <% @challenges.each do |challenge| %>
   <%# unless current_user.challenges.include?(challenge) %>
-    <%= render 'challenges/card', challenge: challenge %>
+  <%= render 'challenges/card', challenge: challenge %>
   <%# end %>
 <% end %>

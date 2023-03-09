@@ -1,4 +1,4 @@
 <%= simple_form_for [@question, @user_answer] do |f| %>
   <%= f.association :answer, as: :hidden, input_html: {value: answer.id} %>
-  <%= f.submit answer.content, class: 'btn-ghost' %>
+  <%= f.submit answer.content, class: "btn-ghost" %>
 <% end %>

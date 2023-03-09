@@ -1,33 +1,40 @@
 <div data-controller="progress-bar">
 
-  <div class="card-dashboard">
-    <h2 class="score-text">Your Score:</i></h2>
-      <h1 class="score-number" data-progress-bar-target="score"><%= @user.total_score %> <i class="fa-solid fa-leaf"></i></h1>
+  <div class="card-dashboard my-3 py-3">
+   <div class="card-dashboard-center">
+    <h2 class="">Your Score:</i></h2>
+      <h2 data-progress-bar-target="score"><%= @user.total_score %> <i class="fa-solid fa-leaf"></i></h2>
+    </div>
+      <div class="card-dashboard-center">
+       <div class="card-dashboard-round" >
+        <%= image_tag "/assets/badges/turtles/#{current_user.badges.last.name}.png", class:"card-dashboard-round-badge" %>
+       </div>
+      </div>
 
     <div class="stepper-wrapper">
       <div class="stepper-item" data-progress-bar-target="stepper" data-score="0">
-        <div class="step-counter">1</div>
-        <div class="step-name">0</div>
+        <div class="step-counter"><%= image_tag "/assets/badges/turtles/turtle1.png", style:"width: 180%" %></div>
+        <div class="step-name">0 <i class="fa-solid fa-leaf"></i></div>
       </div>
       <div class="stepper-item" data-progress-bar-target="stepper" data-score="200">
         <div class="step-counter">2</div>
-        <div class="step-name">200</div>
+        <div class="step-name">200 <i class="fa-solid fa-leaf"></i></div>
       </div>
       <div class="stepper-item" data-progress-bar-target="stepper" data-score="400">
         <div class="step-counter">3</div>
-        <div class="step-name">400</div>
+        <div class="step-name">400 <i class="fa-solid fa-leaf"></i></div>
       </div>
       <div class="stepper-item" data-progress-bar-target="stepper" data-score="600">
         <div class="step-counter">4</div>
-        <div class="step-name">600</div>
+        <div class="step-name">600 <i class="fa-solid fa-leaf"></i></div>
       </div>
       <div class="stepper-item" data-progress-bar-target="stepper" data-score="800">
         <div class="step-counter">5</div>
-        <div class="step-name">800</div>
+        <div class="step-name">800 <i class="fa-solid fa-leaf"></i></div>
       </div>
       <div class="stepper-item" data-progress-bar-target="stepper" data-score="1000">
-        <div class="step-counter">6</div>
-        <div class="step-name">1000</div>
+        <div class="step-counter"><%= image_tag "/assets/badges/turtles/turtle6.png", style:"width: 100%" %></div>
+        <div class="step-name">1000 <i class="fa-solid fa-leaf"></i></div>
       </div>
 
     </div>

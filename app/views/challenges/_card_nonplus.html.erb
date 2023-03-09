@@ -7,7 +7,13 @@
     <%# </div> %>
     <div class ="col-8 width-250">
       <h3><%= challenge.name %></h3>
-      <h4>Difficulty: <%= challenge.difficulty %></h4>
+      <% if challenge.difficulty == 1 %>
+        <h4>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></h4>
+      <% elsif challenge.difficulty == 2 %>
+        <h4>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></h4>
+      <% elsif challenge.difficulty == 3 %>
+        <h4>Environmental Impact: <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></h4>
+      <% end %>
       <h5><%= challenge.max_score %>  <i class="fa-solid fa-leaf"></i></h5>
     </div>
   </div>
@@ -15,11 +21,10 @@
     <%#= link_to dashboard_path do %>
       <%# <i class="fa-solid fa-plus fs-4"></i>  Add to your dashboard %>
       <%# end %>
-      <%= link_to challenge_path(challenge), class: "btn btn-info challenge-card-show-detail-text w-100 mb-2" do %>
+      <%= link_to challenge_path(challenge), class: "btn btn-success challenge-card-show-detail-text w-100 mb-2 px-5 text-white" do %>
         <i class="fa-solid fa-info"></i><b>  Info</b>
       <% end %>
       <%# unless current_user.challenges.include?(challenge) %>
-
     </div>
   </div>
 </div>
