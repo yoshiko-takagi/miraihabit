@@ -16,12 +16,20 @@
 }
 
 
-.challenge-card-small .cl_image_tag {
-  height: 300px;
-  width: 400px;
-  border-radius: 12px;
-
+.challenge-card-small img {
+  height: 60px;
+  width: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 32px;
 }
+
+// .challenge-card-small .cl_image_tag {
+//   height: 300px;
+//   width: 400px;
+//   border-radius: 12px;
+
+// }
 
 .challenge-card-small h2 {
   font-size: 16px;
