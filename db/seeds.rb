@@ -88,8 +88,8 @@ test = [
 # Dont change the creation loop
 test.each do |item|
   question = Question.create(content: item[:question])
-  eco_answer = Answer.create(question: question, content: item[:answer1], image_path: item[:answer1image])
-  not_eco_answer = Answer.create(question: question, content: item[:answer2], image_path: item[:answer2image])
+  eco_answer = Answer.create(question: question, content: item[:answer1])
+  not_eco_answer = Answer.create(question: question, content: item[:answer2])
 
   # Create Associated challenges below:
   challenge = Challenge.new(
