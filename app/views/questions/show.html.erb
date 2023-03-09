@@ -1,15 +1,15 @@
-<div class="container-fluid">
-  <div class="test-card">
-    <div class="test-card-content">
-      <h2><b>Select your current habits</b></h2>
-      <hr>
-      <h5><%= @question.content  %></h5>
-      <div class="answers-wrapper">
-        <% @question.answers.each do |answer|  %>
-          <%= render "form", answer: answer %>
-        <% end %>
-      </div>
+<div class="container w-70">
+  <div class="test-intro">
+    <h3><b>Select your current habits</b></h3>
+  </div>
+  <div class="test-card-top">
+    <h3><strong><%= @question.content  %></strong></h3>
+  </div>
+  <div class="test-card-bottom">
+    <div class="answers-wrapper">
+      <% @question.answers.each do |answer|  %>
+        <%= render "form", answer: answer %>
+      <% end %>
     </div>
-    <%# <%= render "footer" %>
   </div>
 </div>
