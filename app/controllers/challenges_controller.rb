@@ -27,4 +27,14 @@ class ChallengesController < ApplicationController
     @user_challenge = UserChallenge.new
     authorize @challenge
   end
+
+  def select
+    @challenge = Challenge.find(params[:id])
+    authorize @challenge
+    respond_to do |format|
+      # format.html # Follow regular flow of Rails
+      format.text { render partial: "user_challenges/details", locals: {challenge: @challenge}, formats: [:html] }
+    end
+    # raise
+  end
 end
