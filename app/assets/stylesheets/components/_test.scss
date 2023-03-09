@@ -12,8 +12,18 @@
   border-radius: 10px 10px 0 0;
   text-align: center;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  gap: 30px;
 }
 
+.test-card-top img {
+  height: 130px;
+  width: 130px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
 .test-card-bottom {
   background-color: white;
   border-bottom-left-radius: 10px;
@@ -23,7 +33,6 @@
 }
 
 .test-card-bottom .answers-wrapper{
-  margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-around;

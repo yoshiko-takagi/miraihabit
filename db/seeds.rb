@@ -24,8 +24,8 @@ test = [
   #1
   {
     question: "When I go grocery shopping I...",
-    answer1: "Bring reusable bags",
-    answer2: "Buy grocery bags",
+    answer1: "Bring eco bags",
+    answer2: "Buy plastic bags",
     challenge: {
       name: "Bring Reusable Bags",
       description_what: "An estimated 300 million plastic bags each year end up in the Atlantic Ocean.",
@@ -88,8 +88,8 @@ test = [
 # Dont change the creation loop
 test.each do |item|
   question = Question.create(content: item[:question])
-  eco_answer = Answer.create(question: question, content: item[:answer1])
-  not_eco_answer = Answer.create(question: question, content: item[:answer2])
+  eco_answer = Answer.create(question: question, content: item[:answer1], image_path: item[:answer1image])
+  not_eco_answer = Answer.create(question: question, content: item[:answer2], image_path: item[:answer2image])
 
   # Create Associated challenges below:
   challenge = Challenge.new(
