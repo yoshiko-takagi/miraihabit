@@ -8,6 +8,7 @@
 <div class="containter" style="text-align: center;margin-top: 50px;">
   <h2><b>Suggested Challenges</b></h2>
   <h5>We've hand-picked some challenges for you based on your assessment.</h5>
+  </div>
   <% @suggested_challenges .each do |challenge| %>
     <%= render 'challenges/card', challenge: challenge %>
   <% end %>
