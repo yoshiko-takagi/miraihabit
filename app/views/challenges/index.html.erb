@@ -45,8 +45,10 @@
   </div>
 </div>
 <hr>
-<% @challenges.each do |challenge| %>
-  <%# unless current_user.challenges.include?(challenge) %>
-  <%= render 'challenges/card', challenge: challenge %>
-  <%# end %>
-<% end %>
+<div class= "challenge-card-flex container">
+    <% @challenges.each do |challenge| %>
+      <%# unless current_user.challenges.include?(challenge) %>
+      <%= render 'challenges/card', challenge: challenge %>
+      <%# end %>
+    <% end %>
+</div>

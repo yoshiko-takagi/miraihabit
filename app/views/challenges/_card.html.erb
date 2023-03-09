@@ -34,6 +34,5 @@
       <%# unless current_user.challenges.include?(challenge) %>
       <% user_challenge = UserChallenge.where(user: current_user, challenge: challenge).first %>
       <%= render "user_challenges/user_challenge_create_form", challenge: challenge, user_challenge: @user_challenge %>
-    </div>
   </div>
 </div>

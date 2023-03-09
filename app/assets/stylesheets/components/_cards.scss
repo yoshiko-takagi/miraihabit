@@ -1,12 +1,13 @@
 .challenge-card-small {
   overflow: hidden;
   height: 170px;
+  // width: 40%;
   background: #B0D6C5;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin-left: 90px;
-  margin-right: 90px;
+  // margin-left: 90px;
+  // margin-right: 90px;
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 15px;
@@ -14,8 +15,8 @@
 }
 
 .challenge-card-small img {
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   margin-left: 20px;
 }
 
@@ -41,6 +42,13 @@
 .challenge-card-small .challenge-card-small-infos h3 {
   font-size: 20px;
 }
+
+.challenge-card-flex{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
 
 .card-dashboard {
   /* height: 250px;*/
