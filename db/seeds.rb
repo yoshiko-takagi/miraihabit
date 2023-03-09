@@ -5,18 +5,18 @@ require "open-uri"
 # This is the assesment test content.
 # You can change the questions and relative answers here
 
-def generate_fake_avatar
-  url = 'https://this-person-does-not-exist.com/en'
-  doc = Nokogiri::HTML(URI.open(url).read)
-  src = doc.search('#avatar').first['src']
-  photo_url = "https://this-person-does-not-exist.com#{src}"
-end
+# def generate_fake_avatar
+#   url = 'https://this-person-does-not-exist.com/en'
+#   doc = Nokogiri::HTML(URI.open(url).read)
+#   src = doc.search('#avatar').first['src']
+#   photo_url = "https://this-person-does-not-exist.com#{src}"
+# end
 
 
 #questions seeds
 UserAnswer.destroy_all
 UserChallenge.destroy_all
-# User.destroy_all
+User.destroy_all
 Question.destroy_all
 Challenge.destroy_all
 
@@ -191,8 +191,8 @@ puts "created challenges"
 # Users seed
 
 user = User.find_by(email: 'ma@test.com') || User.create!(email: 'ma@test.com', password: 'password', first_name: 'Mary', last_name: 'Apple')
-file = URI.open(generate_fake_avatar)
-user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+# file = URI.open(generate_fake_avatar)
+# user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 user.add_badge(1)
 
 Question.find_each do |question|
@@ -207,8 +207,8 @@ end
 
 
 repeater = User.find_by(email: 'repeater@test.com') || User.create!(email: 'repeater@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
-file = URI.open(generate_fake_avatar)
-repeater.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+# file = URI.open(generate_fake_avatar)
+# repeater.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 repeater.add_badge(2)
 
 
@@ -223,8 +223,8 @@ user_challenge.mark_as_done(Date.new(2023, 03, 06))
 # puts user_challenge.schedule
 
 new_user = User.find_by(email: 'new@test.com') || User.create!(email: 'new@test.com', password: 'password', first_name: 'Yoshiko', last_name: 'Takagi')
-file = URI.open(generate_fake_avatar)
-new_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
+# file = URI.open(generate_fake_avatar)
+# new_user.photo.attach(io: file, filename: 'user.png', content_type: 'image/png')
 new_user.add_badge(1)
 
 puts "created users and repeater"
