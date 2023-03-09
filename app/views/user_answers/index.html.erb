@@ -2,7 +2,7 @@
   <h2>Your Starting Score: </h2>
   <h2><%= current_user.total_score %> <i class="fa-solid fa-leaf"></i> / 560 <i class="fa-solid fa-leaf"></i></h2>
   <div class="score-round" >
-    <%= image_tag "/assets/images/badges/turtles/#{current_user.badges.last.name}.png", class:"score-round-badge" %>
+    <%= image_tag "#{current_user.badges.last.name}.png", class:"score-round-badge" %>
   </div>
 </div>
 <h2>Suggested Challenges:</h2>
