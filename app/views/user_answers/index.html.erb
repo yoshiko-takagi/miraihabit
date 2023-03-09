@@ -2,19 +2,19 @@
   <h2><b>Your Starting Score: </b></h2>
   <%# <h2><%= current_user.total_score %>
   <%# <i class="fa-solid fa-leaf"></i> / 560 <i class="fa-solid fa-leaf"></i></h2> %>
-  <h1><%= current_user.total_score %></h1>
-  <h4>/ 560 <i class="fa-solid fa-leaf"></i></h4>
-  <div class="score-round" >
+  <div class="score-number">
+    <h1><%= current_user.total_score %></h1>
+    <h4>/ 560 <i class="fa-solid fa-leaf"></i></h4>
+  </div>
+  <div class="score-round align-item-end" >
     <%= image_tag "#{current_user.badges.last.name}.png", class:"score-round-badge" %>
   </div>
 </div>
-
 <div class="containter" style="text-align: center;margin-top: 50px;">
   <h2><b>Suggested Challenges</b></h2>
   <h5>We've hand-picked some challenges for you based on your assessment.</h5>
   <hr>
 </div>
-
 <div class= "challenge-card-flex container">
   <% @suggested_challenges .each do |challenge| %>
     <%= render 'challenges/card', challenge: challenge %>
