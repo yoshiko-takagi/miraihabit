@@ -2,7 +2,7 @@
     <%= month_calendar do |date| %>
       <%= date.strftime("%m/%d")%>
       <% @schedule[date.to_s]&.each do |user_challenge| %>
-        <div class="user-challenge" data-challenge-id=<%= user_challenge.challenge.id %> data-action="click->show-details#select" >
+        <div class="user-challenge" data-challenge-id="dashboard/<%= user_challenge.challenge.id %>" data-action="click->show-details#select" >
           <% if user_challenge.schedule[date.to_s] == true %>  <!-- We will add some style to the meeting class later so let's add it now -->
             <p class="badge bg-success text-light"><%= user_challenge.challenge.name %></p>
           <% else %>

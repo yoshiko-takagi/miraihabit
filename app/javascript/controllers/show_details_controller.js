@@ -12,6 +12,7 @@ export default class extends Controller {
   select(event) {
     const url = `${event.currentTarget.dataset.challengeId}`
     console.log(url);
+
     fetch(url, {headers: {"Accept": "text/plain"}})
     .then(response => response.text())
     .then((data) => {
