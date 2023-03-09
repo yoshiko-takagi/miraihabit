@@ -15,15 +15,12 @@
   white-space: nowrap;
 }
 
-.challenge-card-small img {
-  height: 60px;
-  width: 60px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 32px;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+
+.challenge-card-small .cl_image_tag {
+  height: 300px;
+  width: 400px;
+  border-radius: 12px;
+
 }
 
 .challenge-card-small h2 {
@@ -133,8 +130,9 @@
 }
 
 .challenge-card-show .icon-category{
-height: 150px;
-width: 150px;
+height: 100px;
+width: 100px;
+margin-right: 10px;
 
 }
 
