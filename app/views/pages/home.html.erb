@@ -4,7 +4,7 @@
   <p>miraihabit helps you reduce your plastic footprint by completing daily challenges.
     <br>
     Reduce your plastic consumption and choose new sustainable alternatives!</p>
-  <div class="d-grid gap-2 col-6 mx-auto">
+  <div class="col-6 mx-auto">
     <%= link_to "Take an assessment", question_path(@first_question), id: "btn-home-cta" %>
   </div>
 </div>
@@ -19,25 +19,20 @@
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
         <%= image_tag "carousel_1.png" ,class:"d-block w-100 custom-carousel"%>
-
         <div class="carousel-caption d-none d-md-block">
           <h3 class="">Step 1</h3>
           <h4 class="">Take a quick online assessment to get a starting score</h4>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="2000">
-
         <%= image_tag "carousel_2.png" ,class:"d-block w-100 custom-carousel"%>
-
         <div class="carousel-caption d-none d-md-block">
           <h3 class="">Step 2</h3>
           <h4 class="">Choose & complete your daily challenges with new sustainable alternatives</h4>
         </div>
       </div>
       <div class="carousel-item">
-
         <%= image_tag "carousel_3.png" ,class:"d-block w-100 custom-carousel"%>
-
         <div class="carousel-caption d-none d-md-block">
           <h3 class="">Step 3</h3>
           <h4 class="">Track and Reduce your plastic footprint to save your sea turtle from plastic waste!</h4>
@@ -53,7 +48,4 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
-
-
 </div>
