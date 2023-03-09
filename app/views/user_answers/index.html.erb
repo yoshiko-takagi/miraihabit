@@ -8,12 +8,15 @@
     <%= image_tag "#{current_user.badges.last.name}.png", class:"score-round-badge" %>
   </div>
 </div>
+
 <div class="containter" style="text-align: center;margin-top: 50px;">
   <h2><b>Suggested Challenges</b></h2>
   <h5>We've hand-picked some challenges for you based on your assessment.</h5>
   <hr>
 </div>
-<% @suggested_challenges .each do |challenge| %>
-  <%= render 'challenges/card', challenge: challenge %>
-<% end %>
+
+<div class= "challenge-card-flex container">
+  <% @suggested_challenges .each do |challenge| %>
+    <%= render 'challenges/card', challenge: challenge %>
+  <% end %>
 </div>

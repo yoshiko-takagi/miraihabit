@@ -8,16 +8,21 @@
   align-items: center;
   // margin-left: 90px;
   // margin-right: 90px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  // margin-top: 20px;
+  // margin-bottom: 20px;
   border-radius: 15px;
   white-space: nowrap;
 }
 
 .challenge-card-small img {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 32px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
 
 .challenge-card-small h2 {
@@ -46,7 +51,7 @@
 .challenge-card-flex{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 24px;
 }
 
 
@@ -101,9 +106,9 @@
   right:20%;
 }
 
-.challenge-card-show-detail-text{
-  color: rgb(38, 37, 37);
-}
+// .challenge-card-show-detail-text{
+//   color: rgb(38, 37, 37);
+// }
 
 .challenge-show-backbtn{
   margin-left: 100px;
