@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="challenge-show-backbtn">
+      <%= link_to '<< Back', challenges_path, class: "btn btn-outline-info mt-2 text-decoration-none" %>
+  </div>
   <div class="challenge-card-show">
     <h1 class="m-3">
       <b><%= @challenge.name %></b>
