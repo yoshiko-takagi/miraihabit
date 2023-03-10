@@ -215,10 +215,11 @@ repeater.add_badge(2)
 user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 03, 03))
 
 # user_challenge.mark_as_done(Date.new(2023, 03, 04))
-user_challenge.mark_as_done(Date.new(2023, 03, 07))
-user_challenge.mark_as_done(Date.new(2023, 03, 04))
-user_challenge.mark_as_done(Date.new(2023, 03, 05))
-user_challenge.mark_as_done(Date.new(2023, 03, 06))
+user_challenge.mark_as_done(Date.new(2023, 3, 4))
+user_challenge.mark_as_done(Date.new(2023, 3, 5))
+user_challenge.mark_as_done(Date.new(2023, 3, 6))
+user_challenge.mark_as_done(Date.new(2023, 3, 7))
+user_challenge.mark_as_done(Date.new(2023, 3, 8))
 
 # puts user_challenge.schedule
 
