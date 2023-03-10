@@ -123,7 +123,7 @@ file = File.open("app/assets/images/challenge/4741039_s.jpg")
 challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 challenge.save!
 
-challenge = Challenge.new(
+pitch_challenge_2 = Challenge.new(
   name: "Switch to Eco Sponges",
   description_what: "Most sponges are made of either polyester, polyurethane or nylon, which are not recyclable and release microplastics into the water as they fall apart while scrubbing your dishes. Zero waste, eco friendly sponges are the perfect alternative to sponges for dishes that are typically made from plastic.",
   description_why: "You can switch to more eco-friendly sponges that are made of sea sponges, cellulose or coconut fiber. They are just as effective, and don't release any microplastics!",
@@ -132,8 +132,8 @@ challenge = Challenge.new(
   duration: 1,
   max_score: 70)
 file = File.open("app/assets/images/challenge/4728804_s.jpg")
-challenge.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-challenge.save!
+pitch_challenge_2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+pitch_challenge_2.save!
 
 challenge = Challenge.new(
   name: "Switch to Detergent Sheets",
@@ -212,7 +212,8 @@ repeater = User.find_by(email: 'repeater@test.com') || User.create!(email: 'repe
 repeater.add_badge(2)
 
 
-user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 03, 03))
+user_challenge = UserChallenge.create!(user: repeater, challenge: pitch_challenge, created_at: Date.new(2023, 3, 3))
+user_challenge_2 = UserChallenge.create!(user: repeater, challenge: pitch_challenge_2, created_at: Date.new(2023, 3, 9))
 
 # user_challenge.mark_as_done(Date.new(2023, 03, 04))
 user_challenge.mark_as_done(Date.new(2023, 3, 4))
