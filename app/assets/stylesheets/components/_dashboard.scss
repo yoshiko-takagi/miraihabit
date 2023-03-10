@@ -14,11 +14,14 @@
   display: grid;
   /* grid-template-columns: repeat(3, 1fr); */
   /* grid-template-rows: repeat(2, 1fr); */
-  /* grid-column-gap: 16px; */
-  /* grid-row-gap: 0px; */
+  grid-column-gap: 48px;
+  grid-row-gap: 12px;
   padding: 48px;
-  gap: 48px;
+  /* gap: 48px;*/
   }
+
+
+
 
 .dashboard_container .scoreboard { grid-area: 1 / 1 / 2 / 2; }
 .dashboard_container .checker { grid-area: 1 / 2 / 2 / 3; }
@@ -38,4 +41,18 @@
   /* padding: 20px; */
   position: relative;
   text-align: center;
+  max-height: 460px;
+}
+
+.dashboard_container label {
+  display: inline-block;
+  font-family: "Outfit", "Helvetica", "sans-serif";
+}
+
+.form-wrapper{
+  input[type=checkbox]
+  {
+    transform: scale(1.5);
+    margin: 10px;
+  }
 }
