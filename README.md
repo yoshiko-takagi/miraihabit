@@ -1,9 +1,13 @@
-# 📚 miraihabit
+# 🐢 miraihabit
 
-Project description goes here
+Miraihabit is an app that helps you reduce your plastic footprint by completing daily challenges. Reduce your plastic consumption and choose new sustainable alternatives.
 
-_DROP SCREENSHOT HERE_
 <br>
+<img width="1131" alt="miraihabit_1" src="https://user-images.githubusercontent.com/121839115/224639113-e06de799-aabf-4419-8895-6dacae005b05.png">
+<img width="1134" alt="miraihabit_2" src="https://user-images.githubusercontent.com/121839115/224639130-18521e32-29dd-49ac-ab79-e2840a3752cd.png">
+<img width="1134" alt="miraihabit_3" src="https://user-images.githubusercontent.com/121839115/224639147-6f754f33-33f1-4711-8a8d-cd06db67ab89.png">
+<img width="1134" alt="miraihabit_4" src="https://user-images.githubusercontent.com/121839115/224639183-26489f2f-3372-49f1-96f4-169fbb3cefea.png">
+
 App home: [https://miraihabit.herokuapp.com]
    
 
@@ -49,17 +53,7 @@ rails s
 - [Bootstrap](https://getbootstrap.com/) — Styling
 - [Figma](https://www.figma.com) — Prototyping
 
-## Acknowledgements
-Inspired by Jane Mount's [Bibliophile](https://www.amazon.com/Bibliophile-Illustrated-Miscellany-Jane-Mount/dp/1452167230) and a story my father once told me: "Why do we keep books? ... We keep books because they remind us of the new perspectives and lessons we learned".
-
 ## Team Members
-- Yoshiko [https://github.com/yoshiko-takagi]
-- Miriam [https://github.com/mmiy55]
-- Chie [https://github.com/Chieko88]
-- Emily [https://github.com/emiomashi]
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-This project is licensed under the MIT License
+- [Miriam](https://github.com/mmiy55)
+- [Chie](https://github.com/Chieko88)
+- [Emily](https://github.com/emiomashi)
