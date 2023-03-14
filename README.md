@@ -57,3 +57,6 @@ rails s
 - [Miriam](https://github.com/mmiy55)
 - [Chie](https://github.com/Chieko88)
 - [Emily](https://github.com/emiomashi)
+
+## License
+This project is licensed under the MIT License
