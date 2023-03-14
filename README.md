@@ -8,7 +8,7 @@ Miraihabit is an app that helps you reduce your plastic footprint by completing 
 <img width="1134" alt="miraihabit_3" src="https://user-images.githubusercontent.com/121839115/224639147-6f754f33-33f1-4711-8a8d-cd06db67ab89.png">
 <img width="1134" alt="miraihabit_4" src="https://user-images.githubusercontent.com/121839115/224639183-26489f2f-3372-49f1-96f4-169fbb3cefea.png">
 
-App home: [https://miraihabit.herokuapp.com]
+App home: [https://www.miraihabit.site]
    
 
 ## Getting Started
