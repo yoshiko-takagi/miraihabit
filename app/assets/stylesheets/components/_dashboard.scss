@@ -18,24 +18,37 @@
   /* gap: 48px;*/
   @media (max-width: 500px) {
     padding: 8px;
+    grid-template-columns: 1fr ;
   }
   }
 
 .dashboard_container .scoreboard { grid-area: 1 / 1 / 2 / 2;
  @media (max-width: 500px) {
   grid-area: 1 / 1 / 2 / 2;
+  overflow: hidden;
+  max-width: 360px;
+  // need to resize proportionally
 } }
 .dashboard_container .checker { grid-area: 1 / 2 / 2 / 3;
   @media (max-width: 500px) {
     grid-area: 2 / 1 / 3 / 2;
+    overflow: hidden;
+    max-width: 360px;
+
   } }
 .dashboard_container .details { grid-area: 1 / 3 / 2 / 4;
   @media (max-width: 500px) {
     grid-area: 3 / 1 / 4 / 2;
+    overflow: hidden;
+    max-width: 360px;
+
   }}
 .dashboard_container .calendar { grid-area: 2 / 1 / 3 / 4;
   @media (max-width: 500px) {
     grid-area: 4 / 1 / 5 / 2;
+    overflow: hidden;
+    max-width: 360px;
+    // need to resize proportionally
   } }
 
 .dashboard_details {
