@@ -9,22 +9,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to dashboard_path, class: "nav-link" do %>
-              <i class="fa-solid fa-house fs-4"></i>  Dashboard
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to challenges_path, class: "nav-link" do %>
-              <i class="fa-solid fa-flag fs-4"></i>  All Challenges
-            <% end %>
-          </li>
+        <%# <% if user_signed_in? %>
+        <% if user_signed_in?%>
+          <% if current_user.user_answers.exists?%>
+            <li class="nav-item active">
+              <%= link_to dashboard_path, class: "nav-link" do %>
+                <i class="fa-solid fa-house fs-4"></i>  Dashboard
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to challenges_path, class: "nav-link" do %>
+                <i class="fa-solid fa-flag fs-4"></i>  All Challenges
+              <% end %>
+            </li>
+          <% end %>
           <li class="nav-item dropdown">
-            <%= image_tag "#{current_user.photo.attached? ? cl_image_path(current_user.photo.key) : "turtleavatar.png" }", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
+          <%= image_tag "#{current_user.photo.attached? ? cl_image_path(current_user.photo.key) : "turtleavatar.png" }", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+          </div>
           </li>
         <% else %>
           <li class="nav-item">
