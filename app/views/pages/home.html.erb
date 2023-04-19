@@ -1,11 +1,21 @@
 <%# <div class="banner" style="background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_path"139606_s.jpg"%>
+
 <div id="home-banner">
-  <h2>Start Your Plastic-free Journey!</h2>
+    <% if user_signed_in? && current_user.user_answers.exists?%>
+      <h2>Welcome back to your Plastic-free Journey!</h2>
+    <% else %>
+      <h2>Start Your Plastic-free Journey!</h2>
+    <% end %>
   <p>miraihabit helps you reduce your plastic footprint by completing daily challenges.
     <br>
     Reduce your plastic consumption and choose new sustainable alternatives!</p>
   <div class="col-6 mx-auto">
-    <%= link_to "Take an assessment", question_path(@first_question), id: "btn-home-cta" %>
+    <% if user_signed_in? && current_user.user_answers.exists?%>
+      <%= link_to "Check your Dashboard", dashboard_path, id: "btn-home-cta" %>
+    <% else %>
+      <%= link_to "Take an assessment", question_path(@first_question), id: "btn-home-cta" %>
+    <% end %>
+
   </div>
 </div>
 </div>
