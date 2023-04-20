@@ -10,7 +10,7 @@
   background-color: #B0D6C5;
   padding: 20px;
   border-radius: 10px 10px 0 0;
-  text-align: center;
+  // text-align: center;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@
   background-color: white;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  padding: 30px 10px;
+  padding: 16px 10px;
   box-shadow:  5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -36,13 +36,9 @@
   margin-bottom: 20px;
   display: flex;
   justify-content: space-around;
+  // justify-content: center;
+  // gap: 2px;
   flex-wrap: wrap;
-}
-
-.test-card-bottom-answer {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  flex: 0 0 40%;
-  padding: 16px;
 }
 
 .test-card .footer{
@@ -51,3 +47,14 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+.grid{
+  grid-template-areas:
+    'test-intro'
+    'test-card-top'
+    'test-card-bottom';
+}
+
+.test-intro{ grid-area: test-intro; }
+.test-card-top { grid-area: test-card-top; }
+.test-card-bottom { grid-area: test-card-bottom; }
