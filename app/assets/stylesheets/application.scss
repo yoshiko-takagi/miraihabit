@@ -36,4 +36,9 @@
   [class*="col-"] {
     width: 100%;
   }
+  .test-card-top {
+    // display: block;
+    flex-direction: column;
+    gap:16px;
+  }
 }
