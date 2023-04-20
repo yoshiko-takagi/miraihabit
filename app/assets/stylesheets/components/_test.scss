@@ -28,7 +28,7 @@
   background-color: white;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  padding: 30px 10px;
+  padding: 16px 10px;
   box-shadow:  5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -36,13 +36,9 @@
   margin-bottom: 20px;
   display: flex;
   justify-content: space-around;
+  // justify-content: center;
+  // gap: 2px;
   flex-wrap: wrap;
-}
-
-.test-card-bottom-answer {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  flex: 0 0 40%;
-  padding: 16px;
 }
 
 .test-card .footer{
