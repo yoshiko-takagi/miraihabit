@@ -1,16 +1,31 @@
-<div class="container-question">
+<%# <div class="container-question"> %>
+<div class="container">
+<div class="parent">
   <div class="test-intro">
+  <%# <div class="div1"> %>
     <h3><b>Select your current habits</b></h3>
   </div>
+  <%# <div class="div2"> %>
   <div class="test-card-top">
     <%= image_tag "#{@question.category}.png"%>
     <h3><strong><%= @question.content  %></strong></h3>
   </div>
+  <%# </div> %>
+  <%# <div class="test-card-bottom"> %>
   <div class="test-card-bottom">
     <div class="answers-wrapper">
       <% @question.answers.each do |answer|  %>
         <%= render "form", answer: answer %>
       <% end %>
-    </div>
+    <%# </div> %>
   </div>
 </div>
+</div>
+</div>
+
+
+<%# <div class="parent">
+<div class="div1"> </div>
+<div class="div2"> </div>
+<div class="div3"> </div>
+</div> %>
