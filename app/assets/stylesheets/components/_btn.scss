@@ -1,14 +1,16 @@
 .btn-ghost {
+  font-family: "Outfit", "Helvetica", "sans-serif";
   color: white;
   background-color: #ba97c4;
   padding: 8px 24px;
   border-radius: 17px;
   font-weight: lighter;
-  font-size: 21px;
+  font-size: 22px;
   opacity: 1.6;
   transition: opacity 0.3s ease;
   height: 140px;
   width: 250px;
+  flex: 0 0 40%;
 }
 
 .btn-ghost:hover {
