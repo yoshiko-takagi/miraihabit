@@ -51,3 +51,16 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+
+  .test-intro{ grid-area: 1 / 1 / 2 / 13; }
+  .test-card-top { grid-area: 2 / 1 / 5 / 13; }
+  .test-card-bottom { grid-area: 5 / 1 / 9 / 13; }
